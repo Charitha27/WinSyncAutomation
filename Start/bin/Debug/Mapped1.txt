@@ -1,0 +1,15 @@
+
+&Clear=清除(C)
+&Add...=添加(A)...
+Storage=存储
+Logs=日志
+Search=搜索
+General=常规
+Memory=内存
+Console=控制台
+Networking=网络连接
+NICs=NIC
+Performance=性能
+Users=用户
+&Server=服务器(S)
+Clear log entries=清除日志条目

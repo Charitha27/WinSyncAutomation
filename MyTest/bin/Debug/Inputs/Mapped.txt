@@ -1,0 +1,7 @@
+
+_Servers:=サーバー(_S):
+Please refer to the Windows Event Viewer for details.=詳しくは、Windows イベント ビューアーを参照してください。
+
+Insert your smart card into the reader and click OK to begin the restart process.=再起動処理を開始するには、リーダーにスマート カードを挿入して [OK] をクリックしてください。
+Restart Desktop=デスクトップの再起動
+Does not exist

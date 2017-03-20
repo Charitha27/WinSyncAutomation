@@ -1,0 +1,7 @@
+2013/1/17 13:34:57: Test : Installer : INFO
+2013/1/17 13:34:57: ====================== : INFO
+2013/1/17 13:34:57: Input file pathC:\Users\Administrator\Documents\visual studio 2010\Projects\Start\Installer\bin\Debug\..\Inputs\Inputs.txt : INFO
+2013/1/17 13:34:57: Input file pathC:\Users\Administrator\Documents\visual studio 2010\Projects\Start\Installer\bin\Debug\..\Inputs\Inputs.txtDoes not exist : FAIL
+2013/1/17 13:34:57: ****Exiting application from GetInputFilePath*** : FAIL
+2013/1/17 13:34:57: Does not exist : FAIL
+2013/1/17 13:34:57: ***Exiting Application from SearchFileForPattern*** : FAIL

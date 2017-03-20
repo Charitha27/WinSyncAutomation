@@ -1,0 +1,106 @@
+﻿TTKHotKeyPatternSpecifier=&
+
+GuiZard
+==========
+GuiZardLocation=C:\GUIzard_3.5.05
+GuiZardExeName=GUIzard_3.exe
+
+ParentProcessName=XenCenterMain.exe
+
+Installer
+=========
+InstallerLocation=C:\Xenserver\XenCenter.msi
+InstallerProcessName=msiexec.exe
+XenCenterInstallLocation=C:\Program Files\Citrix\XenCenter
+XenCenterExeFullPath=C:\Ci\XenCenter\XenCenter.exe
+XenCenterProcessName=XenCenterMain.exe
+XenCenterVersion=XenCenter 6.1 (build 771)
+
+NewPool
+=======
+PoolMasterServerDisplayName=server-srini-c31
+PoolMasterServerIP=10.105.74.74
+PoolSlaveServerDisplayName=server-srini-c32
+PoolSlaveServerIP=10.105.74.18
+
+AddNewServer
+==============
+XenServerIP1=10.105.74.74
+XenServerUserName1=root
+XenServerPassword1=citrix
+XenServerDisplayName1=server-srini-c31
+XenServerIP2=10.105.74.18
+XenServerUserName2=root
+XenServerPassword2=citrix
+XenServerDisplayName2=server-srini-c32
+
+AssignLicense
+==============
+LicenserverIP=10.105.74.137
+LicenseServerPort=27000
+
+ChangeServerPassword
+===================
+ChangedValidPassword=citrix
+InvalidPassword=invaid
+
+
+StorageRepository
+=================
+CIFSSRName=CIFSPublicISO
+CIFSSRDescription=public ISO 
+CIFSServer=\\10.105.95.1\GSData (E)\People\Srinivas\ISOs
+CIFSUserName=citrix
+CIFSPassword=citrix
+NFSSRName=NFSNmae
+NFSSRDescription=NFS VHD
+NFSSharePath=10.105.95.109:/opt/nfs
+
+XenServerTabs
+=============
+
+NewVM
+=========
+TemplateName=Windows 7 (32-bit)
+ISOName=    JA-Win7 auto.iso
+NewVMName=NewVM
+NewVMName1=customeNametest
+NewTemplateName=短测试输入字符㕝㐀䌫㒣㐁㐎㐏䶵䶴一丁丂丏䨩㸿㒣䶵㰦䬻㠯㘭长文集合舂赛博学北憧园畅微软辛盛爱家
+TemplateDescription=𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𥹥𥹖𠘨𠀀𠀁𠀂𠀃𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𥹥𥹖𠘨𠀀𠀁𠀂𠀃𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𪛕𪛖
+VDiskName=面１２３123!@#$%ａｆｃｇｒｅafcgre𠵅𠮟𠁉)(*_-+='";:/><,\][{}|
+VDiskDescription=𠀋𨛗𦨞𠗖𠵅𠮟 𥹥𥹖𠘨𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𠀂𠀃
+
+Management InterFaces
+======================
+SubnetMask=255.255.255.0
+Gateway=10.105.74.1
+DNS=10.105.74.13
+NetworkName=Network 0
+NetworkName1=Network 1
+Storage1=𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𥹥𥹖𠘨𠀀𠀁𠀂𠀃𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𥹥𥹖𠘨𠀀𠀁𠀂𠀃𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𪛕𪛖
+
+Sanpshot
+==========
+SnapshotName=NewVMSnapsho
+ADIntegration
+==============
+Domain=JAGS.COM
+UserName=administrator
+Password=admin!23
+AddUserName=srini
+
+ManageVapps
+============
+VAppName=GudVapp
+VAppDescription=GoodVappDescription
+VAppExportLocation=C:\
+#***Note - below variable (VAppImportLocation) is used for importing the alreday exported Vapp. While giving the location make sure it is ame as exported location+vAPp name+Vappname.ovf**
+VAppImportLocation=C:\GudVapp\GudVapp.ovf
+NewVAppName=NewVapp
+NewVAppDescription=NewVAppDescriptionAgain
+
+
+Networking
+==========
+NewNetworkName=NewNetwork
+NewNetworkDescription=NewNetworkDescription

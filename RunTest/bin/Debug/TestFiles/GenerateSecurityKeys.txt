@@ -1,0 +1,15 @@
+StartTest(TestName="GenerateSecurityKeys")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Stores",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+ClickBtn(MappedName="Generate Security Keys",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="3")
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+sleep(SleepTimeInSecs="3")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+FinishTest(TestName="GenerateSecurityKeys")

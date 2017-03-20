@@ -1,0 +1,15 @@
+﻿StartTest(TestName="Installer")
+
+#StartProcess(ExeLocation="C:\XenCenter.msi",ProcessName="msiexec.exe")
+
+StartProcess(ReadExeLocation="InstallerLocation",ReadProcessName="InstallerProcessName",KillIfProcessRunning="yes")
+
+#sleep(SleepTimeInSecs="2")
+FindParentWindow(Name="Citrix XenCenter Setup",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes")
+
+#FindParentWindow(MappedNameNotInTTK="Citrix XenCenter Setup",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+
+ClickBtn(Name="Cancel",TimeOutInSec="5",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix XenCenter Setup",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+
+FinishTest(TestName="Installer")

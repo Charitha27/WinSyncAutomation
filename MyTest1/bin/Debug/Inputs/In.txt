@@ -1,0 +1,15 @@
+_Create
+Badly formed Uri
+The security token has expired
+_Default store:
+Add External Beacon
+does not exist
+_Edit...
+_Remove...
+Edit URL
+Create _New Certificate
+App_Controller
+E_nable session reliability	
+Provides access from external networks
+/Citrix/Authentication{0}
+_Beacon address:

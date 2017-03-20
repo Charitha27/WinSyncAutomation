@@ -1,0 +1,7 @@
+StartTest(TestName="Test")
+StartProcess(ExeLocation="c:\3.5.115.0\ShareFileDriveMapperInstaller.exe",ProcessName="ShareFileDriveMapperInstaller.exe")
+FindParentWindow(ClassName="WixStdBA",MaximizeBtnAutomationId="null",TimeOutInSec="10",TerminateOnFailure="yes",SkipGuizard="yes")
+TypeInTextBox(ControlType="ControlType.Edit",TextToType="c:\Users\charithak\Desktop\DMTTest",TimeOutInSec="10",TerminateOnFailure="yes")
+ClickBtn(Name="OK",TimeOutInSec="10",TerminateOnFailure="yes")
+
+FinishTest(TestName="Test")

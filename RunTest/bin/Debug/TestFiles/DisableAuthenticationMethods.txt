@@ -1,0 +1,102 @@
+StartTest(TestName="DisableAuthenticationMethods")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Authentication",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+
+WaitForGuizardToFinishCapture(WindowName="Citrix StoreFront")
+#Limiting searcj scope to data grid
+WaitWindow(AutomationId="siteListView",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+#Selecting user name & password
+ClickOnElementAtMiddle(ControlTypeElementToClick="DataItem",SelectItemIndexIfDuplicatesExist="1",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+#Clarification send to shally. Mapped item of Enable Method is appearing in UI without hotkeys. hence workaround with index
+#ClickBtn(MappedName="Disable Method",TimeOutInSec="3",TerminateOnFailure="yes")
+#Workaround
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="Yes") 
+ClickBtn(ControlType="Button",SelectItemIndexIfDuplicatesExist="7",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="4")
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="Yes") 
+#CheckIfElementDoesNotExists(MappedName="Disable Method",TimeOutInSec="2",TerminateOnFailure="yes")
+#CheckIfElementDoesNotExists(MappedName="Configure Trusted Domains",TimeOutInSec="2",TerminateOnFailure="yes")
+CheckIfElementDoesNotExists(MappedName="Manage Password Options",TimeOutInSec="2",TerminateOnFailure="yes")
+#ClickBtn(MappedName="Enable Method",TimeOutInSec="3",TerminateOnFailure="yes")
+ClickBtn(ControlType="Button",SelectItemIndexIfDuplicatesExist="5",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="4")
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="Yes") 
+#CheckIfElementExists(MappedName="Disable Method",TimeOutInSec="2",TerminateOnFailure="yes")
+#CheckIfElementExists(MappedName="Configure Trusted Domains",TimeOutInSec="2",TerminateOnFailure="yes")
+CheckIfElementExists(MappedName="Manage Password Options",TimeOutInSec="2",TerminateOnFailure="yes")
+WaitForGuizardToFinishCapture(WindowName="Citrix StoreFront")
+
+#Limiting searcj scope to data grid
+WaitWindow(AutomationId="siteListView",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+#Selecting domain passthrough
+ClickOnElementAtMiddle(ControlTypeElementToClick="DataItem",SelectItemIndexIfDuplicatesExist="2",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+#Workaround
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="Yes") 
+ClickBtn(ControlType="Button",SelectItemIndexIfDuplicatesExist="5",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="4")
+#ClickBtn(MappedName="Disable Method",TimeOutInSec="3",TerminateOnFailure="yes")
+#Will take some time for the added store to get reflected
+sleep(SleepTimeInSecs="4")
+#CheckIfElementDoesNotExists(MappedName="Disable Method",TimeOutInSec="2",TerminateOnFailure="yes")
+#Clarification send to shally. Mapped item of Enable Method is appearing in UI without hotkeys. hence workaround with index
+#ClickBtn(MappedName="Enable Method",TimeOutInSec="3",TerminateOnFailure="yes")
+#Workaround
+ClickBtn(ControlType="Button",SelectItemIndexIfDuplicatesExist="5",TimeOutInSec="2",TerminateOnFailure="yes")
+#CheckIfElementExists(MappedName="Disable Method",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="4")
+
+#Limiting searcj scope to data grid
+WaitWindow(AutomationId="siteListView",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+WaitForGuizardToFinishCapture(WindowName="Citrix StoreFront")
+#Selecting smart card
+ClickOnElementAtMiddle(ControlTypeElementToClick="DataItem",SelectItemIndexIfDuplicatesExist="3",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+#ClickBtn(MappedName="Disable Method",TimeOutInSec="3",TerminateOnFailure="yes")
+#Workaround
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="Yes") 
+ClickBtn(ControlType="Button",SelectItemIndexIfDuplicatesExist="5",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="4")
+ClickBtn(ControlType="Button",SelectItemIndexIfDuplicatesExist="5",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="4")
+#CheckIfElementDoesNotExists(MappedName="Disable Method",TimeOutInSec="2",TerminateOnFailure="yes")
+#ClickBtn(MappedName="Enable Method",TimeOutInSec="3",TerminateOnFailure="yes")
+#sleep(SleepTimeInSecs="4")
+#CheckIfElementExists(MappedName="Disable Method",TimeOutInSec="2",TerminateOnFailure="yes")
+
+#Limiting searcj scope to data grid
+WaitWindow(AutomationId="siteListView",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+WaitForGuizardToFinishCapture(WindowName="Citrix StoreFront")
+#Selecting passthrough
+ClickOnElementAtMiddle(ControlTypeElementToClick="DataItem",SelectItemIndexIfDuplicatesExist="4",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+WaitForGuizardToFinishCapture(WindowName="Citrix StoreFront")
+#ClickBtn(MappedName="Disable Method",TimeOutInSec="3",TerminateOnFailure="yes")
+#Workaround
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="Yes") 
+ClickBtn(ControlType="Button",SelectItemIndexIfDuplicatesExist="7",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="4")
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="Yes") 
+#CheckIfElementDoesNotExists(MappedName="Disable Method",TimeOutInSec="2",TerminateOnFailure="yes")
+#CheckIfElementDoesNotExists(MappedName="Configure Trusted Domains",TimeOutInSec="2",TerminateOnFailure="yes")
+CheckIfElementDoesNotExists(MappedName="Configure Delegated Authentication",TimeOutInSec="2",TerminateOnFailure="yes")
+#ClickBtn(MappedName="Enable Method",TimeOutInSec="3",TerminateOnFailure="yes")
+ClickBtn(ControlType="Button",SelectItemIndexIfDuplicatesExist="5",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="4")
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="Yes") 
+#Clarification send to shally. Mapped item of Enable Method is appearing in UI without hotkeys.
+#CheckIfElementExists(MappedName="Disable Method",TimeOutInSec="2",TerminateOnFailure="yes")
+
+#CheckIfElementExists(MappedName="Configure Trusted Domains",TimeOutInSec="2",TerminateOnFailure="yes")
+
+#Elemet appears different as that from ttk file. in ttk "Configure Delegated Authentication	配置委派验证", in ui-  配置委派验证
+#CheckIfElementExists(MappedName="Configure Delegated Authentication",TimeOutInSec="2",TerminateOnFailure="yes")
+
+FinishTest(TestName="DisableAuthenticationMethods")

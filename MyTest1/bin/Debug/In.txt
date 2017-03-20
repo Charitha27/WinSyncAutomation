@@ -1,0 +1,51 @@
+Installer
+=========
+Citrix XenCenter Setup=Citrix XenCenter °²×°³ÌÐò
+
+XenServerTabs
+=============
+Search
+General
+Memory
+Storage
+Networking
+NICs
+Console
+Performance
+Users
+Logs
+&Clear
+Clear log entries
+
+Add New Server
+===========
+&Server
+&Add...
+Add New Server
+
+New VM
+======
+V&M
+&New VM...
+Select a VM template
+Name the new virtual machine
+Locate the operating system installation media
+Select a home server
+Allocate processor and memory resources
+Configure storage for the new VM
+Configure networking on the new VM
+Ready to create the new virtual machine
+Network
+
+XenServer Properties
+====================
+General
+Custom Fields
+Alerts
+Multipathing
+Power On
+Log Destination
+
+
+
+

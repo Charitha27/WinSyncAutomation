@@ -1,0 +1,21 @@
+2013/2/18 15:08:01: Test : WaitForNewVMToComeUp : INFO
+2013/2/18 15:08:01: ====================== : INFO
+2013/2/18 15:08:05: Test : CallPythonScriptForIPCheck : INFO
+2013/2/18 15:08:06: ====================== : INFO
+2013/2/18 15:08:06: GetInputFilePath : INFO
+2013/2/18 15:08:06: ============================= : INFO
+2013/2/18 15:08:06: Input file pathC:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\..\Inputs\Inputs_CH.txt exist : INFO
+2013/2/18 15:08:06: GetInputPattern : INFO
+2013/2/18 15:08:06: ============================= : INFO
+2013/2/18 15:08:06: InputPttern string for  PoolMasterServerIP 10.105.83.34 : INFO
+2013/2/18 15:08:06: GetInputPattern : INFO
+2013/2/18 15:08:06: ============================= : INFO
+2013/2/18 15:08:06: InputPttern string for  XenServerPassword1 citrix : INFO
+2013/2/18 15:08:06: GetInputPattern : INFO
+2013/2/18 15:08:06: ============================= : INFO
+2013/2/18 15:08:06: InputPttern string for  XenServerUserName1 root : INFO
+2013/2/18 15:08:07: GetInputPattern : INFO
+2013/2/18 15:08:07: ============================= : INFO
+2013/2/18 15:08:07: InputPttern string for  NewTemplateName 短测试输入字符㕝㐀䌫㒣㐁㐎㐏䶵䶴一丁丂丏䨩㸿㒣䶵㰦䬻㠯㘭长文集合舂赛博学北憧园畅微软辛盛爱家 : INFO
+2013/2/18 15:08:08: pyArgs http://10.105.83.34 root citrix 短测试输入字符㕝㐀䌫㒣㐁㐎㐏䶵䶴一丁丂丏䨩㸿㒣䶵㰦䬻㠯㘭长文集合舂赛博学北憧园畅微软辛盛爱家 : INFO
+2013/2/18 15:08:09: Arguments GetVMsIP.py http://10.105.83.34 root citrix 短测试输入字符㕝㐀䌫㒣㐁㐎㐏䶵䶴一丁丂丏䨩㸿㒣䶵㰦䬻㠯㘭长文集合舂赛博学北憧园畅微软辛盛爱家 : INFO

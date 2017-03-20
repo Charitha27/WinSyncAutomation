@@ -1,0 +1,22 @@
+﻿ReRunOnFailure=1 
+
+ProductSpecificKeywordPrefix=NA
+
+TTKHotKeyPatternSpecifier=NA
+
+GuiZard
+========
+GuiZardLocation=C:\GUIzard_3.5.05
+GuiZardExeName=GUIzard_3.exe
+
+
+Installer
+=========
+InstallerLocation=C:\Users\satishv\Desktop\SharefileInstallers\ShareFileSync64.msi
+InstallerProcessName=msiexec.exe
+ParentProcessName=ShareFileSyncConfig.exe
+ShareFileSyncConfigExeFullPath=C:\Program Files\Citrix\ShareFile\Sync\ShareFileSyncConfig.exe
+EmailId=satish.vanahalli@citrix.com
+Password=Citrix@123
+FolderName=C:\ShareFileConfiguration
+

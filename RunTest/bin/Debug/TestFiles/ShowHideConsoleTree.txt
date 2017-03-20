@@ -1,0 +1,13 @@
+StartTest(TestName="ShowHideConsoleTree")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+CheckIfElementExists(ClassName="SysTreeView32",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="Item 5",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+CheckIfElementDoesNotExists(ClassName="SysTreeView32",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="Item 5",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+CheckIfElementExists(ClassName="SysTreeView32",TimeOutInSec="5",TerminateOnFailure="yes")
+
+FinishTest(TestName="ShowHideConsoleTree")

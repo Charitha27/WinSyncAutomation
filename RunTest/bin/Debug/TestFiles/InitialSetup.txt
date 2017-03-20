@@ -1,0 +1,19 @@
+StartTest(TestName="InitialSetUp")
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickName="Citrix StoreFront",ClickMouseBtn="Left",Timeout="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+
+ClickBtn(AutomationId="StepButton",SelectItemIndexIfDuplicatesExist="1",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Server address window
+WaitWindow(MappedName="Create New Deployment",TimeOutInSec="60",TerminateOnFailure="yes")
+ClickBtn(AutomationId="nextButton",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="60")
+#Store creation will take some time. Wait for 10 mins for window to appear
+#Store name window
+WaitWindow(MappedName="Create Store",TimeOutInSec="600",TerminateOnFailure="yes")
+ClickBtn(AutomationId="cancelButton",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="3")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+FinishTest(TestName="InitialSetUp")

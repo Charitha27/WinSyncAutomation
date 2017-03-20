@@ -1,0 +1,40 @@
+StartTest(TestName="ManageReceiverUpdates")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Stores",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+SelectItemFromGridWithRowIndex(AutomationId="ItemsList",ItemRowIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes")
+#ClickBtn(MappedName="Manage Citrix Receiver Updates",TimeOutInSec="5",TerminateOnFailure="yes")
+#Manage Citrix Receiver Updates appearing twice in ttk file
+ClickBtn(MappedName="Manage Citrix Receiver Updates",SelectIndexForMultipleMappingString="2",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+
+#Merchandising server
+WaitWindow(MappedName="Manage Citrix Receiver Updates",SelectIndexForMultipleMappingString="2",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="ListItem",SelectItemIndexIfDuplicatesExist="2",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+WaitWindow(MappedName="Manage Citrix Receiver Updates",SelectIndexForMultipleMappingString="2",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="serverUrl",ReadRUFieldTextToType="InvalidMerchandisingServerName",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="2",TerminateOnFailure="no")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="no")
+
+WaitWindow(MappedName="Manage Citrix Receiver Updates",SelectIndexForMultipleMappingString="2",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes")
+TypeInTextBox(AutomationId="serverUrl",TextToType="validMerchandisingServerName",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="no")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+ClickBtn(MappedName="Manage Citrix Receiver Updates",SelectIndexForMultipleMappingString="2",TimeOutInSec="2",TerminateOnFailure="yes")
+#Citrix.com option
+WaitWindow(MappedName="Manage Citrix Receiver Updates",SelectIndexForMultipleMappingString="2",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="ListItem",SelectItemIndexIfDuplicatesExist="1",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+WaitWindow(MappedName="Manage Citrix Receiver Updates",SelectIndexForMultipleMappingString="2",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="CheckBox",SelectItemIndexIfDuplicatesExist="1",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="CheckBox",SelectItemIndexIfDuplicatesExist="2",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="CheckBox",SelectItemIndexIfDuplicatesExist="3",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+FinishTest(TestName="ManageReceiverUpdates")
+
+
+

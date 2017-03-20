@@ -1,0 +1,22 @@
+StartTest(TestName="ExportMultiStoreProvisioningFile")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Stores",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+ClickBtn(MappedName="Export Multi-Store Provisioning File",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+WaitWindow(ClassName="Window",TimeOutInSec="5",TerminateOnFailure="yes") 
+#CheckCheckBox(MappedName="_Select all",TimeOutInSec="5",TerminateOnFailure="yes")
+#ClickOnElementAtBeginning(MappedNameElementToClick="_Select all",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="CheckBox",ClickMouseBtn="Left",TimeOutInSec="2",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="#32770",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="1",TimeOutInSec="1",TerminateOnFailure="yes")
+
+#Confirm save as window may appear if file alreay exists
+WaitWindow(ClassName="#32770",TimeOutInSec="5",TerminateOnFailure="no") 
+ClickBtn(AutomationId="1",TimeOutInSec="1",TerminateOnFailure="no")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+FinishTest(TestName="ExportMultiStoreProvisioningFile")

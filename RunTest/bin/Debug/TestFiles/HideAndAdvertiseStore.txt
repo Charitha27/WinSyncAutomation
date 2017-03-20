@@ -1,0 +1,22 @@
+StartTest(TestName="HideAndAdvertiseStore")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Stores",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+ClickBtn(MappedName="Hide Store",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Hide Store",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+CheckIfElementDoesNotExists(MappedName="Hide Store",TimeOutInSec="2",TerminateOnFailure="yes")
+ClickBtn(MappedName="Advertise Store",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Advertise Store",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+CheckIfElementDoesNotExists(MappedName="Advertise Store",TimeOutInSec="2",TerminateOnFailure="yes")
+FinishTest(TestName="HideAndAdvertiseStore")

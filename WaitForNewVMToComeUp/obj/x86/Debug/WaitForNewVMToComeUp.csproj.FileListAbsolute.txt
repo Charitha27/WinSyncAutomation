@@ -1,0 +1,13 @@
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\WaitForNewVMToComeUp.exe.config
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\WaitForNewVMToComeUp.exe
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\WaitForNewVMToComeUp.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\Start.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\XenServer.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\TestApiCore.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\Start.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\TestApiCore.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\bin\Debug\TestApiCore.xml
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\obj\x86\Debug\WaitForNewVMToComeUp.exe
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\WaitForNewVMToComeUp\obj\x86\Debug\WaitForNewVMToComeUp.pdb

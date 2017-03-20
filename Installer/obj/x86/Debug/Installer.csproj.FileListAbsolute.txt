@@ -1,0 +1,13 @@
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\Installer.exe.config
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\Installer.exe
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\Installer.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\Start.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\XenServer.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\TestApiCore.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\Start.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\TestApiCore.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\TestApiCore.xml
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\obj\x86\Debug\Installer.exe
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\obj\x86\Debug\Installer.pdb

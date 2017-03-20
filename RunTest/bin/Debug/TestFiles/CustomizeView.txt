@@ -1,0 +1,65 @@
+StartTest(TestName="CustomizeView")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Stores",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+#Guizard will make the menyu obj to disappear. hence ensuring Guizard has finished capturinmg
+WaitForGuizardToFinishCapture(WindowName="Citrix StoreFront")
+sleep(SleepTimeInSecs="2")
+
+ClickOnElementAtBeginning(ControlTypeElementToClick="menuitem",SelectItemIndexIfDuplicatesExist="3",ClickMouseBtn="Left",TimeOutInSec="2",TerminateOnFailure="yes")
+InvokeMenu(ControlType="menuitem",SelectItemIndexIfDuplicatesExist="3",Timeout="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="1")
+CapturePopUpUnderDesktop(MenuBarControlType="menu",PopupMenuControlType="menuitem",Timeout="10",TerminateOnFailure="yes")
+
+#Console tree option
+WaitWindow(ClassName="#32770",TimeOutInSec="5",TerminateOnFailure="yes") 
+UnCheckCheckBox(AutomationID="4143",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="1",TimeOutInSec="1",TerminateOnFailure="yes")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+#Guizard will make the menyu obj to disappear. hence ensuring Guizard has finished capturinmg
+WaitForGuizardToFinishCapture(WindowName="Citrix StoreFront")
+sleep(SleepTimeInSecs="2")
+
+ClickOnElementAtBeginning(ControlTypeElementToClick="menuitem",SelectItemIndexIfDuplicatesExist="3",ClickMouseBtn="Left",TimeOutInSec="2",TerminateOnFailure="yes")
+#Standard tool bar
+InvokeMenu(ControlType="menuitem",SelectItemIndexIfDuplicatesExist="3",Timeout="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+CapturePopUpUnderDesktop(MenuBarControlType="menu",PopupMenuControlType="menuitem",Timeout="10",TerminateOnFailure="yes")
+WaitWindow(ClassName="#32770",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+CheckCheckBox(AutomationID="4143",TimeOutInSec="5",TerminateOnFailure="yes")
+UnCheckCheckBox(AutomationID="4139",TimeOutInSec="5",TerminateOnFailure="yes")
+
+ClickBtn(AutomationId="1",TimeOutInSec="1",TerminateOnFailure="yes")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+#Guizard will make the menyu obj to disappear. hence ensuring Guizard has finished capturinmg
+WaitForGuizardToFinishCapture(WindowName="Citrix StoreFront")
+sleep(SleepTimeInSecs="2")
+
+ClickOnElementAtBeginning(ControlTypeElementToClick="menuitem",SelectItemIndexIfDuplicatesExist="3",ClickMouseBtn="Left",TimeOutInSec="2",TerminateOnFailure="yes")
+#Staus bar
+InvokeMenu(ControlType="menuitem",SelectItemIndexIfDuplicatesExist="3",Timeout="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+CapturePopUpUnderDesktop(MenuBarControlType="menu",PopupMenuControlType="menuitem",Timeout="10",TerminateOnFailure="yes")
+WaitWindow(ClassName="#32770",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+CheckCheckBox(AutomationID="4139",TimeOutInSec="5",TerminateOnFailure="yes")
+UnCheckCheckBox(AutomationID="4145",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="1",TimeOutInSec="1",TerminateOnFailure="yes")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+#Guizard will make the menyu obj to disappear. hence ensuring Guizard has finished capturinmg
+WaitForGuizardToFinishCapture(WindowName="Citrix StoreFront")
+sleep(SleepTimeInSecs="2")
+
+ClickOnElementAtBeginning(ControlTypeElementToClick="menuitem",SelectItemIndexIfDuplicatesExist="3",ClickMouseBtn="Left",TimeOutInSec="2",TerminateOnFailure="yes")
+#Standard tool bar
+InvokeMenu(ControlType="menuitem",SelectItemIndexIfDuplicatesExist="3",Timeout="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+CapturePopUpUnderDesktop(MenuBarControlType="menu",PopupMenuControlType="menuitem",Timeout="10",TerminateOnFailure="yes")
+WaitWindow(ClassName="#32770",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+CheckCheckBox(AutomationID="4145",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="1",TimeOutInSec="1",TerminateOnFailure="yes")
+
+FinishTest(TestName="CustomizeView")

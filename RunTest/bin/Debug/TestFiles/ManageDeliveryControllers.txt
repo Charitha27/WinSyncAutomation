@@ -1,0 +1,135 @@
+StartTest(TestName="ManageDeliveryControllers")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Stores",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+ClickBtn(MappedName="Manage Delivery Controllers",TimeOutInSec="3",TerminateOnFailure="yes")
+
+sleep(SleepTimeInSecs="2")
+
+#WaitWindow(MappedName="Manage Delivery Controllers",SelectItemIndexIfDuplicatesExist="2",TimeOutInSec="5",TerminateOnFailure="yes") 
+WaitWindow(ClassName="Window",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="ctrl_farmName",ReadRUFieldTextToType="XADeliveryControllerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes")
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="listitem",SearchPattern="XenApp",ClickMouseBtn="Left",TerminateOnFailure="yes")
+#Press ok without giving server name
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Add invalid server
+WaitWindow(MappedName="Add Server",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="serverName",ReadRUFieldTextToType="InvalidMerchandisingServerName",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Add dummy XA serevr
+WaitWindow(MappedName="Add Server",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="serverName",ReadTextToType="DummyXAServerName",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#WaitWindow(MappedName="Manage Delivery Controllers",TimeOutInSec="5",TerminateOnFailure="yes") 
+WaitWindow(ClassName="Window",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="ctrl_farmName",ReadRUFieldTextToType="AppControllerDeliveryControllerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes")
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="listitem",SearchPattern="AppController",ClickMouseBtn="Left",TerminateOnFailure="yes")
+#Press ok without giving server name
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="server",ReadTextToType="DummyAppCServerName",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="servicePort",TextToType="  ",TimeOutInSec="5",TerminateOnFailure="yes")
+#Leave port field blank
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+#Error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#enter invalid port
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="servicePort",ReadRUFieldTextToType="InvalidPort",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+#Error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Enter valid port 
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="servicePort",ReadTextToType="AppcPort",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#VDI in a box
+WaitWindow(MappedName="Manage Delivery Controllers",TimeOutInSec="5",TerminateOnFailure="yes") 
+#WaitWindow(ClassName="Window",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="ctrl_farmName",ReadRUFieldTextToType="VDIInBoxDeliveryControllerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes")
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="listitem",SearchPattern="VDI",ClickMouseBtn="Left",TerminateOnFailure="yes")
+#Press ok without giving server name
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Add invalid server
+WaitWindow(MappedName="Add Server",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="serverName",ReadRUFieldTextToType="InvalidMerchandisingServerName",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Server",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="serverName",ReadTextToType="DummyVDI-In-A-BoxServerName",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Manage Delivery Controllers",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+ClickBtn(MappedName="Manage Delivery Controllers",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="4")
+
+WaitWindow(ClassName="Window",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+#remove all
+#WaitWindow(MappedName="Manage Delivery Controllers",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickOnGridWithRowIndex(AutomationId="PART_ListView",ItemRowIndexToSelect="0",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationId="PART_RemoveButton",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="PART_RemoveButton",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="PART_RemoveButton",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="PART_RemoveButton",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Error window, as all delivery controllers are removed
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Manage Delivery Controllers",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="buttonCancel",TimeOutInSec="5",TerminateOnFailure="yes")
+
+FinishTest(TestName="ManageDeliveryControllers")

@@ -1,0 +1,84 @@
+#Creating the store after doing initial setup
+
+StartTest(TestName="ManageBeacons")
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Beacons",ClickMouseBtn="Left",Timeout="5",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+ClickBtn(MappedName="Manage Beacons",SelectIndexForMultipleMappingString="2",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="3")
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+
+SelectItemFromList(ParentContainerAutomationId="PART_ListBox",ItemIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickBtn(AutomationId="PART_EditButton",TimeOutInSec="5",TerminateOnFailure="yes")
+WaitWindow(MappedName="Edit External Beacon",TimeOutInSec="15",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",TextToType=" ",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window as URL is balnk
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="1",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Edit External Beacon",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadTextToType="BeaconAddress",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+SelectItemFromList(ParentContainerAutomationId="PART_ListBox",ItemIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickBtn(AutomationId="PART_RemoveButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+ClickOnElementAtBeginning(MappedNameElementToClick="_Specify beacon address:",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#error window as url is blank
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="1",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(ControlType="Edit",ReadRUFieldTextToType="InvalidWebSitePath",TimeOutInSec="2",TerminateOnFailure="yes")
+
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#error window as url is invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="1",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(ControlType="Edit",ReadTextToType="BeaconAddress",TimeOutInSec="2",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#error window as configure atleast 2 beacons
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="1",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+ClickOnElementAtBeginning(MappedNameElementToClick="_Use the service URL",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add External Beacon",TimeOutInSec="15",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="yes")
+#error window as url is blank
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="1",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add External Beacon",TimeOutInSec="15",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadTextToType="BeaconAddress1",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+WaitWindow(MappedName="Add External Beacon",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadTextToType="BeaconAddress2",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="yes")
+
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+
+#Limiting search scope
+#WaitWindow(AutomationID="hasBeacons",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+
+FinishTest(TestName="ManageBeacons")

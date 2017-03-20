@@ -1,0 +1,22 @@
+StartTest(TestName="IntegrateWithCitrixOnline")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Stores",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+
+SelectItemFromGridWithRowIndex(AutomationId="ItemsList",ItemRowIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes")
+
+ClickBtn(MappedName="Integrate with Citrix Online",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+
+WaitWindow(MappedName="Integrate with Citrix Online",TimeOutInSec="5",TerminateOnFailure="yes")
+
+SetRadioButton(MappedName="_Ask users to contact their help desk for an account",TimeOutInSec="1",TerminateOnFailure="yes")
+SetRadioButton(MappedName="A_dd the app immediately",TimeOutInSec="1",TerminateOnFailure="yes")
+
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+sleep(SleepTimeInSecs="5")
+
+FinishTest(TestName="IntegrateWithCitrixOnline")

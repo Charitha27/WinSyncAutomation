@@ -1,0 +1,10 @@
+StartTest(TestName="Help")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+ClickBtn(MappedName="Help",TimeOutInSec="5",TerminateOnFailure="yes")
+
+sleep(SleepTimeInSecs="5")
+
+FinishTest(TestName="Help")

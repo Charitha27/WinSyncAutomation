@@ -1,0 +1,13 @@
+StartTest(TestName="ShowHideActionPane")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+CheckIfElementExists(ClassName="AfxFrameOrView42u",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="Item 18",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+CheckIfElementDoesNotExists(ClassName="AfxFrameOrView42u",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="Item 18",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+CheckIfElementExists(ClassName="AfxFrameOrView42u",TimeOutInSec="5",TerminateOnFailure="yes")
+
+FinishTest(TestName="ShowHideActionPane")

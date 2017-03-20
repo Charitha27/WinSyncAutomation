@@ -1,0 +1,130 @@
+2013/2/19 14:22:23: Test : Installer : INFO
+2013/2/19 14:22:23: ====================== : INFO
+2013/2/19 14:22:25: GetInputFilePath : INFO
+2013/2/19 14:22:25: ============================= : INFO
+2013/2/19 14:22:25: Input file pathC:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\..\Inputs\Inputs_CH.txt exist : INFO
+2013/2/19 14:22:25: GetInputPattern : INFO
+2013/2/19 14:22:25: ============================= : INFO
+2013/2/19 14:22:25: InputPttern string for  InstallerLocation C:\Xenserver\XenCenter.l10n.msi : INFO
+2013/2/19 14:22:25: GetInputPattern : INFO
+2013/2/19 14:22:25: ============================= : INFO
+2013/2/19 14:22:25: InputPttern string for  InstallerProcessName msiexec.exe : INFO
+2013/2/19 14:22:25: GetInputPattern : INFO
+2013/2/19 14:22:25: ============================= : INFO
+2013/2/19 14:22:25: InputPttern string for  LocationToInstallXenCenter C:\短测 : INFO
+2013/2/19 14:22:25: GetInputPattern : INFO
+2013/2/19 14:22:25: ============================= : INFO
+2013/2/19 14:22:25: InputPttern string for  XenCenterVersion XenCenter 6.1 (build 771) : INFO
+2013/2/19 14:22:25: msiexec.exe launched successfully : INFO
+2013/2/19 14:22:30: Checking for SetupDialog : INFO
+2013/2/19 14:22:30: SetupDialog obj found : INFO
+2013/2/19 14:22:30: ClickCancel : INFO
+2013/2/19 14:22:30: ============ : INFO
+2013/2/19 14:22:30: sending click on Cancel Button : INFO
+2013/2/19 14:22:33: sending click on Yes Button : INFO
+2013/2/19 14:22:37: CheckInterruptedDialog : INFO
+2013/2/19 14:22:37: ============ : INFO
+2013/2/19 14:22:37: ClickFinishBtn : INFO
+2013/2/19 14:22:37: ============ : INFO
+2013/2/19 14:22:37: sending click on FinishBtnwObj : INFO
+2013/2/19 14:22:39: msiexec.exe launched successfully : INFO
+2013/2/19 14:22:42: ClickCancel : INFO
+2013/2/19 14:22:42: ============ : INFO
+2013/2/19 14:22:42: sending click on Cancel Button : INFO
+2013/2/19 14:22:45: sending click on No Button : INFO
+2013/2/19 14:22:49: SetupDialogObj is there after pressing on no btn : INFO
+2013/2/19 14:22:49: sending click on Next Button : INFO
+2013/2/19 14:22:50: sending click on Browse Button : INFO
+2013/2/19 14:22:51: SetTextBoxText : INFO
+2013/2/19 14:22:51: =============== : INFO
+2013/2/19 14:22:51: setting textbox Xencenter Install location textbox to C:\短测 : INFO
+2013/2/19 14:22:51: sending click on OK Button : INFO
+2013/2/19 14:22:56: sending click on Next Button : INFO
+2013/2/19 14:22:57: sending click on Install Button : INFO
+2013/2/19 14:22:58: ClickCancWaitTillFinishButtonIsActiveel : INFO
+2013/2/19 14:22:58: =============================== : INFO
+2013/2/19 14:23:17: Finish btn is active aftre Xencenter install : INFO
+2013/2/19 14:23:17: sending click on Finish Button : INFO
+2013/2/19 14:23:18: CheckXenCenterInstalledVersion : INFO
+2013/2/19 14:23:18: ============================== : INFO
+2013/2/19 14:23:18: GetInputFilePath : INFO
+2013/2/19 14:23:18: ============================= : INFO
+2013/2/19 14:23:18: Input file pathC:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\..\Inputs\Inputs_CH.txt exist : INFO
+2013/2/19 14:23:18: GetInputPattern : INFO
+2013/2/19 14:23:18: ============================= : INFO
+2013/2/19 14:23:18: InputPttern string for  LocationToInstallXenCenter C:\短测 : INFO
+2013/2/19 14:23:18: Xencenter not opened. Trying to open : INFO
+2013/2/19 14:23:28: Xencenter launched successfully : INFO
+2013/2/19 14:24:13: SetFocusOnWindow : INFO
+2013/2/19 14:24:13: ============================= : INFO
+2013/2/19 14:24:13: ClickStartNewTestButton : INFO
+2013/2/19 14:24:13: ===================== : INFO
+2013/2/19 14:24:13: GetInputFilePath : INFO
+2013/2/19 14:24:13: ============================= : INFO
+2013/2/19 14:24:13: Input file pathC:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\..\Inputs\Inputs_CH.txt exist : INFO
+2013/2/19 14:24:13: GetGuizardLocation : INFO
+2013/2/19 14:24:13: ===================== : INFO
+2013/2/19 14:24:13: GetInputFilePath : INFO
+2013/2/19 14:24:13: ============================= : INFO
+2013/2/19 14:24:13: Input file pathC:\Users\Administrator\documents\visual studio 2010\Projects\Start\Installer\bin\Debug\..\Inputs\Inputs_CH.txt exist : INFO
+2013/2/19 14:24:13: GetInputPattern : INFO
+2013/2/19 14:24:13: ============================= : INFO
+2013/2/19 14:24:13: InputPttern string for  GuiZardLocation C:\Users\Administrator\Desktop\GUIzard\GUIzard_3.5.04\GUIzard_3.exe : INFO
+2013/2/19 14:24:13: GetInputPattern : INFO
+2013/2/19 14:24:13: ============================= : INFO
+2013/2/19 14:24:13: InputPttern string for  GuiZardLocation C:\Users\Administrator\Desktop\GUIzard\GUIzard_3.5.04\GUIzard_3.exe : INFO
+2013/2/19 14:24:13: Object with nameXenCenterfound : INFO
+2013/2/19 14:24:17: MaximizeXenCenter : INFO
+2013/2/19 14:24:17: ===================== : INFO
+2013/2/19 14:24:25: sending click on MaximizedBtn : INFO
+2013/2/19 14:24:26: Xencenter has opened  after installation : INFO
+2013/2/19 14:24:29: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:24:32: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:24:36: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:24:39: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:24:42: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:24:45: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:24:49: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:24:52: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:24:55: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:24:58: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:01: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:05: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:08: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:11: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:14: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:17: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:21: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:24: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:27: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:30: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:33: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:37: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:40: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:43: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:47: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:50: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:53: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:56: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:25:59: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:03: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:06: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:09: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:12: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:15: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:18: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:22: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:25: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:28: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:31: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:34: Waiting for AllowUpdatesDialog to open : INFO
+2013/2/19 14:26:34: Timeout waiting for AllowUpdatesDialog to open  after installation.  : FAIL
+2013/2/19 14:26:34: InvokeXenCenterSubMenuItem : INFO
+2013/2/19 14:26:34: ============================= : INFO
+2013/2/19 14:26:34: GetXenCenterMainMenuObject : INFO
+2013/2/19 14:26:34: ============================= : INFO
+2013/2/19 14:26:48: Invoking menuitem关于 XenCenter(A) : INFO
+2013/2/19 14:26:53: VersionNumber found after install *XenCenter 6.1 (build 771)* : INFO
+2013/2/19 14:26:53: Expected VersionNumber XenCenterVersion *XenCenter 6.1 (build 771)* : INFO
+2013/2/19 14:26:53: Right version of Xencenter installed XenCenter 6.1 (build 771) : PASS
+2013/2/19 14:26:53: sending click on OKBtnObj : INFO

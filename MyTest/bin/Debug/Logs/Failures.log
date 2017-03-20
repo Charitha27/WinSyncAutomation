@@ -1,0 +1,2 @@
+2013/2/22 15:00:33: ***FAIL found in GUIZARD at   <window caption="[0004] C:\Xenserver\GenertaeMapping\Mapped_JP.txt - Notepad++" result="FAIL" frameworkId="Win32" detailsFilename="\MissingAccessKey\MissingAccessKey_0004_C__Xenserver_GenertaeMapping_Mapped_JP.txt - Notepad++.xml" group="MissingAccessKeyGroup" screenshot="\MissingAccessKey\MissingAccessKey_0004_C__Xenserver_GenertaeMapping_Mapped_JP.txt - Notepad++.jpg" /> : FAIL
+2013/2/22 15:00:36:  FailFolderPath C:\TestResults\test1_20130221_163730//MissingAccessKey\ : FAIL

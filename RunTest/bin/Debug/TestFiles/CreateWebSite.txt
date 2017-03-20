@@ -1,0 +1,92 @@
+#Creating the store after doing initial setup
+
+StartTest(TestName="CreateWebSite")
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Receiver for Web",ClickMouseBtn="Left",Timeout="5",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+ClickBtn(MappedName="Create Website",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="3")
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+#Click create by leaving all fields blank
+TypeInTextBox(AutomationId="WebsitePath",TextToType=" ",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="createButton",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="WebsitePath",ReadRUFieldTextToType="InvalidWebSitePath",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="createButton",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window as website path is invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="WebsitePath",ReadTextToType="VaildWebSitePath",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="createButton",TimeOutInSec="5",TerminateOnFailure="yes")
+#Will take time for store creation
+sleep(SleepTimeInSecs="6")
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+WaitTillControlIsActive(AutomationId="finishButton",TimeOutInSec="300",TerminateOnFailure="yes")
+ClickBtn(AutomationId="finishButton",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="3")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+WaitWindow(AutomationId="siteListView",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+#Selecting new website
+ClickOnElementAtBeginning(ControlTypeElementToClick="DataItem",SelectItemIndexIfDuplicatesExist="2",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+#Limiting search scope
+WaitWindow(ClassName="SiteOverviewControl",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+CheckIfTextBoxHasExpectedValue(ControlType="Edit",ReadExpectedValue="WebSitePath",TimeOutInSec="3",TerminateOnFailure="yes")
+
+
+#Create site using Remote store
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+ClickBtn(MappedName="Create Website",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="3")
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+SelectItemFromList(ParentContainerAutomationId="StoresList",ItemIndexToSelect="2",TimeOutInSec="5",TerminateOnFailure="yes")
+#Click create by leaving all fields blank
+TypeInTextBox(AutomationId="StoresURL",TextToType=" ",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="createButton",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window as all fields are blank
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="StoresURL",ReadRUFieldTextToType="InvalidStoreURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="createButton",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window as store url is invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="StoresURL",ReadTextToType="ValidStoreURL",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="WebsitePath",TextToType=" ",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="createButton",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window as website is blank
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="WebsitePath",ReadRUFieldTextToType="InvalidWebSitePath",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="createButton",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window as website is invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="WebsitePath",ReadTextToType="VaildRemoteWebSitePath",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="createButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Will take time for store creation
+sleep(SleepTimeInSecs="6")
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+WaitTillControlIsActive(AutomationId="finishButton",TimeOutInSec="300",TerminateOnFailure="yes")
+ClickBtn(AutomationId="finishButton",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="3")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+FinishTest(TestName="CreateWebSite")

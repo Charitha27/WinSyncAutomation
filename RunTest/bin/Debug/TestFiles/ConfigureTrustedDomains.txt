@@ -1,0 +1,43 @@
+StartTest(TestName="ConfigureTrustedDomains")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Authentication",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+#Limiting serach scope
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="Yes") 
+#Unable to find the btm useing mapped name, hence using index
+#ClickBtn(MappedName="Configure Trusted Domains",SelectIndexForMultipleMappingString="2",TimeOutInSec="3",TerminateOnFailure="yes")
+ClickBtn(ControlType="Button",SelectItemIndexIfDuplicatesExist="5",TimeOutInSec="2",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+
+#SelectItemFromList(ParentContainerAutomationId="PART_ListBox",MappedNameItemToSelect="Tr_usted domains only",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="listitem",SelectItemIndexIfDuplicatesExist="2",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Domain",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window as domain name i blank
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Domain",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="domainName",ReadRUFieldTextToType="InvalidDomainName",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Error window as domain name is invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Domain",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="domainName",ReadTextToType="DomainName",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+FinishTest(TestName="ConfigureTrustedDomains")

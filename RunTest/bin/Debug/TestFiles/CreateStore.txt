@@ -1,0 +1,64 @@
+#Creating the store after doing initial setup
+
+StartTest(TestName="CreateStore")
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickName="Citrix StoreFront",ClickMouseBtn="Left",Timeout="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="5",TerminateOnFailure="yes") 
+
+ClickBtn(AutomationId="StepButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Create Store",TimeOutInSec="600",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="friendlyName",ReadTextToType="StoreName",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="nextButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Delivery controllers
+WaitWindow(MappedName="Create Store",TimeOutInSec="600",TerminateOnFailure="yes")
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="ctrl_farmName",ReadRUFieldTextToType="DeliveryControllerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#SelectItemFromList(ParentContainerAutomationId="PART_ListBox",NameItemToSelect="_XenApp (XenApp)",TimeOutInSec="5",TerminateOnFailure="yes")
+#SelectItemFromList(ParentContainerAutomationId="PART_ListBox",NameItemToSelect="App_Controller (AppController)",TimeOutInSec="5",TerminateOnFailure="yes")
+#SelectItemFromList(ParentContainerAutomationId="PART_ListBox",NameItemToSelect="_VDI-in-a-Box (VDIinaBox)",TimeOutInSec="5",TerminateOnFailure="yes")
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="listitem",SearchPattern="XenApp",ClickMouseBtn="Left",TerminateOnFailure="yes")
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="listitem",SearchPattern="AppController",ClickMouseBtn="Left",TerminateOnFailure="yes")
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="listitem",SearchPattern="VDIinaBox",ClickMouseBtn="Left",TerminateOnFailure="yes")
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="listitem",SearchPattern="XenDesktop",ClickMouseBtn="Left",TerminateOnFailure="yes")
+#Configure for  XD
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Add server
+WaitWindow(MappedName="Add Server",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="serverName",ReadTextToType="XDServerName",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Delivery Controller",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Create Store",TimeOutInSec="8",TerminateOnFailure="yes")
+ClickBtn(AutomationId="nextButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Remote access
+WaitWindow(MappedName="Create Store",TimeOutInSec="5",TerminateOnFailure="yes")
+#SelectItemFromList(ParentContainerAutomationId="PART_ListBox",NameItemToSelect="None",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ParentCntrAutomationID="PART_ListBox",MappedNameElementToClick="No _VPN tunnel",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ParentCntrAutomationID="PART_ListBox",MappedNameElementToClick="Full V_PN tunnel",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ParentCntrAutomationID="PART_ListBox",MappedNameElementToClick="N_one",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationId="createButton",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Create Store",TimeOutInSec="5",TerminateOnFailure="yes")
+WaitTillControlIsActive(MappedName="_Finish",TimeOutInSec="180",TerminateOnFailure="yes")
+ClickBtn(AutomationId="finishButton",TimeOutInSec="5",TerminateOnFailure="yes")
+#Will take some time for the added store to get reflected
+sleep(SleepTimeInSecs="30")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+#Check if store is added
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Stores",ClickMouseBtn="Left",Timeout="3",TerminateOnFailure="yes")
+CheckIfElementExists(ReadName="StoreName",TimeOutInSec="5",TerminateOnFailure="yes")
+#SelectItemFromGridWithRowIndex(AutomationId="ItemsList",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes")
+
+FinishTest(TestName="CreateStore")

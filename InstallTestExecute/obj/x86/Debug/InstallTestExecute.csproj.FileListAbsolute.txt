@@ -1,0 +1,13 @@
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\InstallTestExecute.exe.config
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\InstallTestExecute.exe
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\InstallTestExecute.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\Start.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\XenServer.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\TestApiCore.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\Start.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\TestApiCore.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\bin\Debug\TestApiCore.xml
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\obj\x86\Debug\InstallTestExecute.exe
+C:\Users\Administrator\documents\visual studio 2010\Projects\Start\InstallTestExecute\obj\x86\Debug\InstallTestExecute.pdb

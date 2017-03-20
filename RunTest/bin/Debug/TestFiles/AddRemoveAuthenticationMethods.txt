@@ -1,0 +1,42 @@
+StartTest(TestName="AddRemoveAuthenticationMethods")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Authentication",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+ClickBtn(MappedName="Add/Remove Methods",SelectIndexForMultipleMappingString="2",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+WaitWindow(ClassName="Window",TimeOutInSec="20",TerminateOnFailure="yes") 
+UnCheckCheckBox(MappedName="User name and password",TimeOutInSec="1",TerminateOnFailure="yes")
+
+UnCheckCheckBox(MappedName="Smart card",TimeOutInSec="1",TerminateOnFailure="yes")
+
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="CheckBox",SearchPattern="NetScaler",ClickMouseBtn="Left",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error wndow
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="15",TerminateOnFailure="no") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="no")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+CheckCheckBox(MappedName="User name and password",TimeOutInSec="1",TerminateOnFailure="yes")
+#Mapped name does notmatch the name in ttk file, Name as in UISy=”Ú÷±Õ®, name in ttk = ”Ú¥´µ›
+#CheckCheckBox(MappedName="Domain pass-through",TimeOutInSec="1",TerminateOnFailure="yes")
+#Workaround
+ClickOnElementAtBeginning(ControlTypeElementToClick="CheckBox",SelectItemIndexIfDuplicatesExist="2",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+CheckCheckBox(MappedName="Smart card",TimeOutInSec="1",TerminateOnFailure="yes")
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="CheckBox",SearchPattern="NetScaler",ClickMouseBtn="Left",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+sleep(SleepTimeInSecs="3")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+#VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="siteListView",ColumnNumToRetrieveValue="1",MappedExpectedColumnValue="User name and password",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+#VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="siteListView",ColumnNumToRetrieveValue="1",MappedExpectedColumnValue="Domain pass-through",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+#VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="siteListView",ColumnNumToRetrieveValue="1",MappedExpectedColumnValue="Domain pass-through",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+#VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="siteListView",ColumnNumToRetrieveValue="1",MappedExpectedColumnValue="Domain pass-through",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#SelectItemFromDataGridWithRowIndexAndVerifyColumnValue(GridAutomationId="siteListView",ItemRowIndexToSelect="1",ColumnNumToRetrieveValue="2",MappedExpectedColumnValue="yes",TimeOutInSec="5",TerminateOnFailure="yes")
+#SelectItemFromDataGridWithRowIndexAndVerifyColumnValue(GridAutomationId="siteListView",ItemRowIndexToSelect="2",ColumnNumToRetrieveValue="2",MappedExpectedColumnValue="yes",TimeOutInSec="5",TerminateOnFailure="yes")
+#SelectItemFromDataGridWithRowIndexAndVerifyColumnValue(GridAutomationId="siteListView",ItemRowIndexToSelect="3",ColumnNumToRetrieveValue="2",MappedExpectedColumnValue="yes",TimeOutInSec="5",TerminateOnFailure="yes")
+##SelectItemFromDataGridWithRowIndexAndVerifyColumnValue(GridAutomationId="siteListView",ItemRowIndexToSelect="4",ColumnNumToRetrieveValue="2",MappedExpectedColumnValue="yes",TimeOutInSec="5",TerminateOnFailure="yes")
+
+FinishTest(TestName="AddRemoveAuthenticationMethods")

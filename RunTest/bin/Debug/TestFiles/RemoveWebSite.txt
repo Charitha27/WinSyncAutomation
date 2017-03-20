@@ -1,0 +1,16 @@
+#Creating the store after doing initial setup
+
+StartTest(TestName="RemoveWebSite")
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Receiver for Web",ClickMouseBtn="Left",Timeout="5",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+ClickBtn(MappedName="Remove Website",TimeOutInSec="5",TerminateOnFailure="yes")
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="10")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+
+FinishTest(TestName="RemoveWebSite")

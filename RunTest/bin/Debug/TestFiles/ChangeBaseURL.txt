@@ -1,0 +1,41 @@
+StartTest(TestName="ChangeBaseURL")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Server Group",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+#Limitig the search scope
+WaitWindow(ClassName="NativeHWNDHost",TimeOutInSec="2",TerminateOnFailure="yes",SkipGuizard="yes") 
+#Change base url btn
+ClickBtn(ClassName="TaskButton",SelectItemIndexIfDuplicatesExist="2",TimeOutInSec="2",TerminateOnFailure="yes")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+#Leave basws url field blank
+TypeInTextBox(AutomationId="ServerAddress",TextToType=" ",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="1",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="ServerAddress",ReadRUFieldTextToType="InvalidBaseURL",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#error window
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="1",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="ServerAddress",ReadTextToType="BaseURL",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="10")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+#Limitig the search scope
+WaitWindow(ClassName="ClusterDetailsControl",TimeOutInSec="2",TerminateOnFailure="yes",SkipGuizard="yes")
+CheckIfTextBoxHasExpectedValue(ClassName="TextBox",ReadExpectedValue="BaseURL",TimeOutInSec="2",TerminateOnFailure="yes") 
+
+FinishTest(TestName="ChangeBaseURL")

@@ -1,0 +1,30 @@
+﻿GuiZard
+==========
+GuiZardLocation=C:\Users\Administrator\Desktop\GUIzard\GUIzard_3.5.04\GUIzard_3.exe
+
+Installer
+=========
+InstallerLocation=C:\Xenserver\XenCenter.l10n.msi
+InstallerProcessName=msiexec.exe
+LocationToInstallXenCenter=C:\短测
+XenCenterVersion=XenCenter 6.1 (build 771)
+
+
+AddNewServer
+==============
+XenServerIP=10.105.83.52
+XenServerUserName=root
+XenServerPassword=citrix
+AddedXenServerDisplayName=srini-t33
+PoolName=TestPoolSree
+
+XenServerTabs
+=============
+
+NewVM
+=========
+TemplateName=GSJA-Win7x86(31aug2012)
+NewTemplateName=短测试输入字符㕝㐀䌫㒣㐁㐎㐏䶵䶴一丁丂丏䨩㸿㒣䶵㰦䬻㠯㘭长文集合舂赛博学北憧园畅微软辛盛爱家
+TemplateDescription=𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𥹥𥹖𠘨𠀀𠀁𠀂𠀃𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𥹥𥹖𠘨𠀀𠀁𠀂𠀃𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𪛕𪛖
+VDiskName=面１２３123!@#$%ａｆｃｇｒｅafcgre𠵅𠮟𠁉)(*_-+='";:/><,\][{}|
+VDiskDescription=𠀋𨛗𦨞𠗖𠵅𠮟 𥹥𥹖𠘨𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𠀂𠀃

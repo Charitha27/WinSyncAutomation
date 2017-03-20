@@ -1,0 +1,20 @@
+﻿StartTest(TestName="Installer_SF")
+StartProcess(ReadExeLocation="InstallerLocation",ReadProcessName="InstallerProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="null",TimeOutInSec="120",TerminateOnFailure="yes") 
+CheckCheckBox(MappedNameNotInTTKName="I accept the terms of this license agreement",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(MappedNameNotInTTKName="Next >",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="2")
+
+#If IIS is not installed, IIS installation screen will also appear
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="null",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickBtn(MappedNameNotInTTKName="Next >",TimeOutInSec="1",TerminateOnFailure="no")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="null",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickBtn(MappedNameNotInTTKName="Install",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="40")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="null",TimeOutInSec="120",TerminateOnFailure="yes") 
+WaitTillControlIsActive(MappedNameNotInTTKName="Finish",TimeOutInSec="180",TerminateOnFailure="yes")
+ClickBtn(MappedNameNotInTTKName="Finish",TimeOutInSec="5",TerminateOnFailure="yes")
+#SendKeys(KeysToSend="ENTER")
+sleep(SleepTimeInSecs="2")
+FinishTest(TestName="Installer_SF")

@@ -1,0 +1,15 @@
+StartTest(TestName="AddServer")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Server Group",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickBtn(MappedName="Add Server",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonCancel",TimeOutInSec="3",TerminateOnFailure="yes")
+
+sleep(SleepTimeInSecs="2")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+FinishTest(TestName="AddServer")

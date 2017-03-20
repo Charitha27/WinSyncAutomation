@@ -1,0 +1,5 @@
+_Servers:
+Please refer to the Windows Event Viewer for details.
+Restart Desktop
+Insert your smart card into the reader and click OK to begin the restart process.
+Does not exist

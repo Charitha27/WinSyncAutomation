@@ -1,0 +1,53 @@
+#Creating the store after doing initial setup
+
+StartTest(TestName="SecureTicketAuthority")
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickName="NetScaler Gateway",ClickMouseBtn="Left",Timeout="5",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+ClickBtn(MappedName="Secure Ticket Authority",TimeOutInSec="2",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+SelectItemFromList(ParentContainerAutomationId="PART_ListBox",ItemIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickBtn(AutomationId="PART_EditButton",TimeOutInSec="2",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Edit Sercure Ticket Authority URL",TimeOutInSec="15",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadRUFieldTextToType="InvalidSTAURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as STA url was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Edit Sercure Ticket Authority URL",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadTextToType="STAURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+ClickBtn(AutomationId="PART_RemoveButton",TimeOutInSec="2",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="2",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Secure Ticket Authority URL",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadRUFieldTextToType="InvalidSTAURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as STA url was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Secure Ticket Authority URL",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadTextToType="STAURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes",SkipGuizard="yes") 
+
+CheckCheckBox(ControlType="checkbox",SelectItemIndexIfDuplicatesExist="2",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="5")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes",SkipGuizard="yes") 
+FinishTest(TestName="SecureTicketAuthority")

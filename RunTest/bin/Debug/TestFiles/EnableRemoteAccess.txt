@@ -1,0 +1,196 @@
+StartTest(TestName="EnableRemoteAccess")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Stores",ClickMouseBtn="Left",Timeout="2",TerminateOnFailure="yes")
+ClickBtn(MappedName="Enable Remote Access",SelectIndexForMultipleMappingString="2",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickOnElementAtBeginning(ParentCntrAutomationID="PART_ListBox",MappedNameElementToClick="No _VPN tunnel",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationID="PART_AddButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="gatewayName",ReadRUFieldTextToType="NetScalarGWApplianceName",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="gatewayUrl",ReadRUFieldTextToType="InvalidNSGWURL",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="internalIP",ReadRUFieldTextToType="InvalidSubnetIP",TimeOutInSec="5",TerminateOnFailure="yes")
+
+
+#Log on type
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="4",TimeOutInSec="5",TerminateOnFailure="yes")
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="3",TimeOutInSec="5",TerminateOnFailure="yes")
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="2",TimeOutInSec="5",TerminateOnFailure="yes")
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes")
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes")
+
+TypeInTextBox(AutomationId="callbackURL",ReadRUFieldTextToType="InvalidCallBackURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="nextButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as NS g/w URL was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes",SkipGuizard="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="gatewayUrl",ReadTextToType="NetScalarGatewayURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="nextButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as subnet was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes",SkipGuizard="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="internalIP",ReadTextToType="SubnetIP",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="nextButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as call back url was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes",SkipGuizard="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="callbackURL",ReadTextToType="CallBackURL",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Select 5.x option
+SelectItemFromList(ParentContainerAutomationId="agVersions",ItemIndexToSelect="2",TimeOutInSec="5",TerminateOnFailure="yes")
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes") 
+
+#Select access controller
+SelectItemFromList(ParentContainerAutomationId="deploymentMode",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#select 9.x
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes") 
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+SelectItemFromList(ParentContainerAutomationId="agVersions",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="nextButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+
+WaitWindow(MappedName="Secure Ticket Authority (STA)",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="PART_AddButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Secure Ticket Authority URL",TimeOutInSec="5",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadRUFieldTextToType="InvalidSTAURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as STA url was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Secure Ticket Authority URL",TimeOutInSec="5",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadTextToType="STAURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#WaitWindow(MappedName="Secure Ticket Authority (STA)",TimeOutInSec="5",TerminateOnFailure="yes") 
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="createButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+#Enable remote access window
+WaitWindow(ClassName="Window",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+sleep(SleepTimeInSecs="8")
+
+#FULL VPN tunnel
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickBtn(MappedName="Enable Remote Access",SelectIndexForMultipleMappingString="2",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickOnElementAtBeginning(ParentCntrAutomationID="PART_ListBox",MappedNameElementToClick="Full V_PN tunnel",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickBtn(AutomationID="PART_AddButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="gatewayName",ReadRUFieldTextToType="NetScalarGWApplianceName2",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="gatewayUrl",ReadRUFieldTextToType="InvalidNSGWURL",TimeOutInSec="5",TerminateOnFailure="yes")
+TypeInTextBox(AutomationId="internalIP",ReadRUFieldTextToType="InvalidSubnetIP",TimeOutInSec="5",TerminateOnFailure="yes")
+
+
+#Log on type
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="4",TimeOutInSec="5",TerminateOnFailure="yes")
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="3",TimeOutInSec="5",TerminateOnFailure="yes")
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="2",TimeOutInSec="5",TerminateOnFailure="yes")
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes")
+SelectItemFromList(ParentContainerAutomationId="logonType",ItemIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes")
+
+TypeInTextBox(AutomationId="callbackURL",ReadRUFieldTextToType="InvalidCallBackURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="nextButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as display name already exists
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="1",TerminateOnFailure="no") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="1",TerminateOnFailure="no")
+
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="30",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="gatewayName",TextToType="NetScalarGWApplianceName",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="nextButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as NS g/w URL was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes",SkipGuizard="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="gatewayUrl",ReadTextToType="NetScalarGatewayURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="nextButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as subnet was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes",SkipGuizard="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="internalIP",ReadTextToType="SubnetIP",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="nextButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as call back url was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes",SkipGuizard="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+TypeInTextBox(AutomationId="callbackURL",ReadTextToType="CallBackURL",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Select 5.x option
+SelectItemFromList(ParentContainerAutomationId="agVersions",ItemIndexToSelect="2",TimeOutInSec="5",TerminateOnFailure="yes")
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes") 
+
+#Select access controller
+SelectItemFromList(ParentContainerAutomationId="deploymentMode",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#select 9.x
+#WaitWindow(MappedName="General Settings",TimeOutInSec="5",TerminateOnFailure="yes") 
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+SelectItemFromList(ParentContainerAutomationId="agVersions",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="nextButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+
+WaitWindow(MappedName="Secure Ticket Authority (STA)",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="PART_AddButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Secure Ticket Authority URL",TimeOutInSec="5",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadRUFieldTextToType="InvalidSTAURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#Error window as STA url was invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Secure Ticket Authority URL",TimeOutInSec="5",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="AddressTextBox",ReadTextToType="STAURL",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+#WaitWindow(MappedName="Secure Ticket Authority (STA)",TimeOutInSec="5",TerminateOnFailure="yes") 
+FindParentWindowWithPatternInName(PatternName="NetScaler Gateway",SearchElementControlType="window",MaximizeBtnAutomationId="null",TimeOutInSec="20",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="createButton",TimeOutInSec="3",TerminateOnFailure="yes")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+#Enable remote access window
+WaitWindow(ClassName="Window",TimeOutInSec="5",TerminateOnFailure="yes") 
+ClickBtn(AutomationID="buttonOK",TimeOutInSec="3",TerminateOnFailure="yes")
+
+sleep(SleepTimeInSecs="3")
+FinishTest(TestName="EnableRemoteAccess")

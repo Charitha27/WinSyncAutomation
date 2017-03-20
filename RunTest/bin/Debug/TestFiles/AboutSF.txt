@@ -1,0 +1,21 @@
+StartTest(TestName="AboutSF")
+
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+#Limit search scope
+#WaitWindow(ClassName="ToolbarWindow32",TimeOutInSec="5",TerminateOnFailure="yes",SkipGuizard="yes") 
+#ClickOnElementAtBeginning(MappedNameElementToClick="Help",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="MenuItem",SelectItemIndexIfDuplicatesExist="4",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="1")
+WaitForGuizardToFinishCapture(WindowName="NameofWindow")
+ClickOnElementAtEnd(ControlTypeElementToClick="MenuItem",SelectItemIndexIfDuplicatesExist="4",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="1")
+#CapturePopUpUnderDesktop(MenuBarControlType="Menu",PopupMenuControlType="menuitem",SelectItemIndexIfDuplicatesExist="2",Timeout="2",TerminateOnFailure="yes")
+SendKeys(KeysToSend="UP")
+SendKeys(KeysToSend="ENTER")
+sleep(SleepTimeInSecs="2")
+WaitWindowWithPatternInName(PatternName="Citrix StoreFront",SearchElementControlType="Window",TimeOutInSec="2",TerminateOnFailure="yes")
+ClickBtn(AutomationID="1",TimeOutInSec="3",TerminateOnFailure="yes") 
+
+FinishTest(TestName="AboutSF")

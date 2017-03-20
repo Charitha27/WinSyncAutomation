@@ -1,0 +1,49 @@
+#Creating the store after doing initial setup
+
+StartTest(TestName="AddShortCutsToWebSite")
+StartProcess(ReadExeLocation="SFExeFullPath",ReadProcessName="SFProcessName")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+ClickOnTreeElement(ParentTreeName="Citrix StoreFront",ElementToClickMappedName="Receiver for Web",ClickMouseBtn="Left",Timeout="5",TerminateOnFailure="yes")
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+
+ClickBtn(MappedName="Add Shortcuts to Websites",TimeOutInSec="5",TerminateOnFailure="yes")
+sleep(SleepTimeInSecs="3")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+#ClickHyperlink(Controltype="hyperlink",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="hyperlink",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window as no websites are given
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Specify website
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="PART_AddButton",TimeOutInSec="5",TerminateOnFailure="yes")
+WaitWindow(MappedName="Add Websites",TimeOutInSec="15",TerminateOnFailure="yes") 
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Error window as field is b,ank
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Websites",TimeOutInSec="15",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="TrustedUrl",ReadRUFieldTextToType="InvalidWebSitePath",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+#Error window as field is invalid
+WaitWindow(Name="Citrix StoreFront",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(MappedName="Add Websites",TimeOutInSec="15",TerminateOnFailure="yes") 
+TypeInTextBox(AutomationId="TrustedUrl",ReadTextToType="WebSitePath",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="yes")
+
+WaitWindow(ClassName="Window",TimeOutInSec="15",TerminateOnFailure="yes") 
+#ClickHyperlink(Controltype="hyperlink",TimeOutInSec="5",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ControlTypeElementToClick="hyperlink",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+#Error window as no websites are given
+WaitWindow(MappedName="Add Shortcuts to Websites",TimeOutInSec="5",TerminateOnFailure="no")
+ClickBtn(AutomationId="buttonOK",TimeOutInSec="5",TerminateOnFailure="no")
+
+FindParentWindow(Name="Citrix StoreFront",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes") 
+FinishTest(TestName="AddShortCutsToWebSite")

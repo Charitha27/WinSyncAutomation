@@ -1,0 +1,11 @@
+Installer
+=========
+Open File - Security Warning=打开文件 - 安全警告
+
+XenServerTabs
+=============
+
+Add New Server
+===============
+&Add...=添加(A)...
+&Server=服务器(S)

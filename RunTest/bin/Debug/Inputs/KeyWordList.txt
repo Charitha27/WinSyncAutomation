@@ -1,0 +1,798 @@
+#Start the test
+StartTest(TestName="Nameofthe test")
+
+FinishTest(TestName="AddServer")
+
+FinishCLITest(TestName="StartVMUsingCLIFromTemplate")
+
+sleep(SleepTimeInSecs="sleep time in secs")
+
+#====================
+#capture screen shot
+#=====================
+capturescreenshot(TakeScreenShot="yes")
+
+
+#Find ParentWindow
+#=====================
+FindParentWindow(Name="NameoftheWindow",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+FindParentWindow(MappedName="NameoftheWindow",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+FindParentWindow(AutomationId="NameoftheWindow",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+FindParentWindow(ClassName="NameoftheWindow",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+FindParentWindow(MappedNameNotInTTKName="NameoftheWindow",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes or no") 
+FindParentWindow(MappedNameNotInTTKName="NameoftheWindow",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes or no",SkipGuizard="yes or no") 
+
+FindParentWindow(Name="NameoftheWindow",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no")
+FindParentWindow(MappedName="NameoftheWindow",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no")
+FindParentWindow(AutomationId="NameoftheWindow",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no")
+FindParentWindow(ClassName="NameoftheWindow",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no")
+FindParentWindow(MappedNameNotInTTK="NameoftheWindow",MaximizeBtnAutomationId="Maximize",TimeOutInSec="120",TerminateOnFailure="yes or no",SkipGuizard="yes or no") 
+
+FindParentWindowWithPatternInName(PatternName="NameoftheWindow",SearchElementControlType="",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes") 
+FindParentWindowPatternInName(MappedPatternName="NameoftheWindow",SearchElementControlType="",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes") 
+FindParentWindowWithPatternInName(PatternName="NameoftheWindow",SearchElementControlType="",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no") 
+FindParentWindowPatternInName(MappedPatternName="NameoftheWindow",SearchElementControlType="",MaximizeBtnAutomationId="",TimeOutInSec="Secs",TerminateOnFailure="yes or no") 
+
+
+#=============================================================================
+#Check if the process is running. WIll start or attch to running process
+#=============================================================================
+StartProcess(ExeLocation="Full path to exe",ProcessName="Name of process")
+StartProcess(ExeLocation="Full path to exe",ReadProcessName="Name of process")
+StartProcess(ReadExeLocation="Full path to exe",ReadProcessName="Name of process")
+StartProcess(ReadExeLocation="Full path to exe",ReadProcessName="Name of process",KillIfProcessRunning="yes")
+
+#===============================================
+#Wait for window with name under parent winodw
+#===============================================
+WaitWindow(Name="NameoftheWindow",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+#Wait for window with localized name under parent winodw. Will do mapping first
+WaitWindow(MappedName="NameoftheWindow",TimeOutInSec="Secs",TerminateOnFailure="yes or no") 
+
+WaitWindow(MappedName="NameoftheWindow",SelectIndexForMultipleMappingString="2",TimeOutInSec="Secs",TerminateOnFailure="yes or no") 
+WaitWindow(MappedName="NameoftheWindow",SelectIndexForMultipleMappingString="2",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no") 
+#Wait for window with AutoId
+WaitWindow(AutomationId="Automationid of window",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+WaitWindow(MappedNameNotInTTKName="NameoftheWindow",TimeOutInSec="Secs",TerminateOnFailure="yes or no") 
+WaitWindow(ClassName="NameoftheWindowClass",TimeOutInSec="Secs",TerminateOnFailure="yes or no") 
+WaitWindow(ClassName="NameoftheWindowClass",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no") 
+
+WaitWindow(Name="NameoftheWindow",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no")
+#Wait for window with localized name under parent winodw. Will do mapping first
+WaitWindow(MappedName="NameoftheWindow",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no") 
+#Wait for window with AutoId
+WaitWindow(AutomationId="Automationid of window",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no")
+WaitWindow(MappedNameNotInTTK="NameoftheWindow",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no") 
+WaitWindow(ClassName="NameoftheWindowClass",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no") 
+WaitWindow(ClassName="NameoftheWindowClass",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no") 
+
+#WaitWindow is also used for limiting the search scope, hence taking SearchElementControlType as well
+#Supports only name & no other param
+WaitWindowWithPatternInName(PatternName="NameoftheWindow",SearchElementControlType="",TimeOutInSec="Secs",TerminateOnFailure="yes or no") 
+WaitWindowWithPatternInName(PatternName="NameoftheWindow",SearchElementControlType="",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no") 
+WaitWindowWithPatternInName(MappedPatternName="NameoftheWindow",SearchElementControlType="",TimeOutInSec="Secs",TerminateOnFailure="yes or no") 
+WaitWindowWithPatternInName(MappedPatternName="NameoftheWindow",SearchElementControlType="",TimeOutInSec="Secs",TerminateOnFailure="yes or no",SkipGuizard="yes or no") 
+
+#===========================================================================================================
+#Click btn
+#===========================================================================================================
+ClickBtn(MappedName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+ClickBtn(MappedName="EN Name",SelectIndexForMultipleMappingString="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+ClickBtn(MappedName="EN Name",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+ClickBtn(MappedNameNotInTTKName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+ClickBtn(Name="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+ClickBtn(Name="EN Name",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+ClickBtn(AutomationId="AutoId",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+ClickBtn(AutomationId="AutoId",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+ClickBtn(ClassName="Classname",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+ClickBtn(ClassName="AutoId",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+ClickBtn(ControlType="Classname",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+ClickBtn(ControlType="AutoId",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+#===========================================================================================================
+#Set rd btn
+#===========================================================================================================
+SetRadioButton(AutomationId="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SetRadioButton(AutomationId="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+SetRadioButton(MappedName="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SetRadioButton(MappedName="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+SetRadioButton(Name="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SetRadioButton(Name="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+SetRadioButton(ClassName="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SetRadioButton(ClassName="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+SetRadioButton(Controltype="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SetRadioButton(Controltype="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+#===========================================================================================================
+#TypeInTextBox
+#===========================================================================================================
+TypeInTextBox(MappedName="EN Name",TextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(MappedName="EN Name",TextToType="TextToType",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+TypeInTextBox(TextboxMappedName="EN Name",ReadTextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(TextboxMappedName="EN Name",ReadTextToType="TextToType",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+TypeInTextBox(TextboxMappedName="EN Name",ReadRUFieldTextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(TextboxMappedName="EN Name",ReadRUFieldTextToType="TextToType",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+
+TypeInTextBox(AutomationId="AutoId",TextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(AutomationId="AutoId",ReadTextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(AutomationId="AutoId",TextToType="TextToType",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+TypeInTextBox(AutomationId="AutoId",ReadRUFieldTextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(AutomationId="AutoId",ReadRUFieldTextToType="TextToType",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+TypeInTextBox(ClassName="AutoId",ReadTextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(ClassName="AutoId",ReadRUFieldTextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(ClassName="AutoId",TextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(ClassName="AutoId",ReadTextToType="TextToType",SelectItemIndexIfDuplicatesExist="Secs",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(ClassName="AutoId",ReadRUFieldTextToType="TextToType",SelectItemIndexIfDuplicatesExist="Secs",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+TypeInTextBox(ControlType="AutoId",ReadTextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(ControlType="AutoId",ReadRUFieldTextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(ControlType="AutoId",TextToType="TextToType",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(ControlType="AutoId",ReadTextToType="TextToType",SelectItemIndexIfDuplicatesExist="Secs",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+TypeInTextBox(ControlType="AutoId",ReadRUFieldTextToType="TextToType",SelectItemIndexIfDuplicatesExist="Secs",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+
+CheckIfTextBoxHasExpectedValue(MappedName="EN Name",ExpectedValue="Expected",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfTextBoxHasExpectedValue(MappedName="EN Name",ReadExpectedValue="Expected",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfTextBoxHasExpectedValue(MappedName="EN Name",ReadRUFieldExpectedValue="Expected",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+CheckIfTextBoxHasExpectedValue(AutomationId="EN Name",ExpectedValue="Expected",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfTextBoxHasExpectedValue(AutomationId="EN Name",ReadExpectedValue="Expected",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfTextBoxHasExpectedValue(AutomationId="EN Name",ReadRUFieldExpectedValue="Expected",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+CheckIfTextBoxHasExpectedValue(ClassName="EN Name",ExpectedValue="Expected",SelectItemIndexIfDuplicatesExist="Secs",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfTextBoxHasExpectedValue(ClassName="EN Name",ReadExpectedValue="Expected",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfTextBoxHasExpectedValue(ClassName="EN Name",ReadRUFieldExpectedValue="Expected",SelectItemIndexIfDuplicatesExist="Secs",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+CheckIfTextBoxHasExpectedValue(ControlType="EN Name",ExpectedValue="Expected",SelectItemIndexIfDuplicatesExist="Secs",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfTextBoxHasExpectedValue(ControlType="EN Name",ReadExpectedValue="Expected",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfTextBoxHasExpectedValue(ControlType="EN Name",ReadRUFieldExpectedValue="Expected",SelectItemIndexIfDuplicatesExist="Secs",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+#===========================================================================================================
+#TypeInDocumentObject
+#===========================================================================================================
+TypeInDocumentObject(AutomationId="NameTextBox",ReadTextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(AutomationId="NameTextBox",ReadTextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(AutomationId="NameTextBox",ReadRUFieldTextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(AutomationId="NameTextBox",ReadRUFieldTextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(MappedName="NameTextBox",TextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(MappedName="NameTextBox",TextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(MappedName="NameTextBox",ReadTextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(MappedName="NameTextBox",ReadTextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(MappedName="NameTextBox",ReadRUFieldTextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(MappedName="NameTextBox",ReadRUFieldTextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(Name="NameTextBox",TextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(Name="NameTextBox",TextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(ClassName="NameTextBox",TextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(ClassName="NameTextBox",TextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(ClassName="NameTextBox",ReadTextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(ClassName="NameTextBox",ReadTextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(ClassName="NameTextBox",ReadRUFieldTextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(ClassName="NameTextBox",ReadRUFieldTextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(ControlType="NameTextBox",TextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(ControlType="NameTextBox",TextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(ControlType="NameTextBox",ReadTextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(ControlType="NameTextBox",ReadTextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+TypeInDocumentObject(ControlType="NameTextBox",ReadRUFieldTextToType="TemplateName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+TypeInDocumentObject(ControlType="NameTextBox",ReadRUFieldTextToType="TemplateName",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+#===========================================================================================================
+#ClickHyperlink
+#===========================================================================================================
+ClickHyperlink(AutomationId="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickHyperlink(AutomationId="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickHyperlink(MappedName="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickHyperlink(MappedName="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickHyperlink(Name="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickHyperlink(Name="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickHyperlink(ClassName="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickHyperlink(ClassName="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickHyperlink(Controltype="507",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickHyperlink(Controltype="507",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+#===========================================================================================================
+#InvokeMenu
+#===========================================================================================================
+
+InvokeMenu(AutomationId="AutoID",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+InvokeMenu(Name="AutoID",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+InvokeMenu(MappedName="AutoID",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+InvokeMenu(ClassName="AutoID",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+InvokeMenu(ControlType="AutoID",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+InvokeMenu(ControlType="AutoID",SelectItemIndexIfDuplicatesExist="",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+InvokeMenu(AutomationId="MAinMenuAutoID",SubMenuAutomationID="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+InvokeMenu(AutomationId="MAinMenuAutoID",ParentSelectItemIndexIfDuplicatesExist="",SubMenuAutomationID="SubMenuAutoID,ChildSelectItemIndexIfDuplicatesExist="",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+InvokeMenu(Name="MAinMenuName",SubMenuName="SubMenuName,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+InvokeMenu(MappedName="MAinMenuName",MappedSubMenuName="SubMenuName,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+#===========================================================================================================
+#InvokeMenuTree
+#===========================================================================================================
+InvokeMenuTree(MappedName="&Server",MappedSubMenuName1="&Add...",MappedSubMenuName2="&Add...",Timeout="5",TerminateOnFailure="yes or no")
+InvokeMenuTree(MappedName="&Server",MappedSubMenuName1="&Add...",ReadSubMenuName2="&Add...",Timeout="5",TerminateOnFailure="yes or no")
+
+#===========================================================================================================
+#CapturePopUpUnderDesktop - Search under desktop
+#===========================================================================================================
+CapturePopUpUnderDesktop(MenuBarAutomationId="MAinMenuAutoID",PopupMenuAutomationID="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderDesktop(MenuBarAutomationId="MAinMenuAutoID",PopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderDesktop(MenuBarName="MAinMenuAutoID",PopupMenuAutomationID="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderDesktop(MenuBarName="MAinMenuAutoID",PopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderDesktop(MenuBarControlType="MAinMenuAutoID",PopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderDesktop(MenuBarControlType="MAinMenuAutoID",PopupMenuControlType="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderDesktop(MenuBarControlType="MAinMenuAutoID",PopupMenuControlType="SubMenuAutoID,SelectItemIndexIfDuplicatesExist="",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+CheckIfPopupMenuItemUnderDesktopExists(MenuBarControlType="MAinMenuAutoID",PopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+#===========================================================================================================
+#CapturePopUpInActiveWindow - Search under ActiveWindow
+#===========================================================================================================
+CapturePopUpUnderCurrentActiveWindow(MenuBarAutomationId="MAinMenuAutoID",PopupMenuAutomationID="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderCurrentActiveWindow(MenuBarAutomationId="MAinMenuAutoID",PopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderCurrentActiveWindow(MenuBarName="MAinMenuAutoID",PopupMenuAutomationID="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderCurrentActiveWindow(MenuBarName="MAinMenuAutoID",PopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderCurrentActiveWindow(MenuBarControlType="MAinMenuAutoID",PopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderCurrentActiveWindow(MenuBarControlType="MAinMenuAutoID",PopupMenuControlType="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderCurrentActiveWindow(MenuBarControlType="MAinMenuAutoID",PopupMenuControlType="SubMenuAutoID,SelectItemIndexIfDuplicatesExist="",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderCurrentActiveWindow(MenuBarControlType="MAinMenuAutoID",MappedPopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderCurrentActiveWindow(MenuBarControlType="MAinMenuAutoID",SelectItemIndexIfDuplicatesExist="",MappedPopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CapturePopUpUnderCurrentActiveWindow(MenuBarControlType="controltype.menu",ReadMappedPopupMenuName="VMProtectionPolicyName",Timeout="1",TerminateOnFailure="yes")
+
+
+CheckIfPopupMenuItemUnderActiveWindowExists(MenuBarControlType="MAinMenuAutoID",PopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+CheckIfPopupMenuItemUnderActiveWindowExists(MenuBarControlType="MAinMenuAutoID",MappedPopupMenuName="SubMenuAutoID,Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+#===========================================================================================================
+#ClickOnTreeElement
+#===========================================================================================================
+ClickOnTreeElement(ParentTreeName="ParentTreeElemntName",ElementToClickName="Name",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+ClickOnTreeElement(ReadRUFieldParentTreeName="PoolName",ReadElementToClickName="SecondVMName",ClickMouseBtn="Left",Timeout="1",TerminateOnFailure="yes")
+ClickOnTreeElement(ReadRUFieldParentTreeName="PoolName",ReadRUFieldElementToClickName="NewVMName",ClickMouseBtn="Right",Timeout="5",TerminateOnFailure="yes")
+
+ClickOnTreeElement(ParentTreeAutomationId="ParentTreeElemntAutoid",ElementToClickName="Name",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeAutomationId="ParentTreeElemntAutoid",ReadElementToClickName="Name",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeAutomationId="ParentTreeElemntAutoid",ReadRUFieldElementToClickName="Name",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeAutomationId="ParentTreeElemntAutoid",ElementToClickName="Name",ChildSelectItemIndexIfDuplicatesExist="",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeName="ParentTreeElemntName",ReadElementToClickName="Name",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeName="ParentTreeElemntName",ReadRUFieldElementToClickName="Name",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeName="ParentTreeElemntName",ElementToClickAutomationId="AUtoID",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeAutomationId="ParentTreeElemntAutoid",ElementToClickAutomationId="AUtoID",ChildSelectItemIndexIfDuplicatesExist="",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeName="ParentTreeElemntName",ReadElementToClickName="AUtoID",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeName="ParentTreeElemntName",ReadRUFieldElementToClickName="AUtoID",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeName="ParentTreeElemntName",ElementToClickMappedName="AUtoID",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeMappedName="ParentTreeElemntID",ElementToClickMappedName="Name",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeName="ParentTreeElemntID",ElementToClickMappedName="Name",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+ClickOnTreeElement(ParentTreeControType="Tree",ParentSelectItemIndexIfDuplicatesExist="",ElementToClickMappedName="Name",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+#==============================================================================================================================================================================
+#SelectItemFromTreeBasedOnIndex - Can be used to select a child item from tree, when the child itemdoes not have any autoid or name to distinguish
+# Serach will be purely based on index
+#==============================================================================================================================================================================
+SelectItemFromTreeBasedOnIndex(ParentTreeName="ParentTreeElemntName",ChildItemIndex="1",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+SelectItemFromTreeBasedOnIndex(ParentTreeAutomationId="ParentTreeElemntAutoid",ChildItemIndex="1",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+SelectItemFromTreeBasedOnIndex(ParentTreeMappedName="ParentTreeElemntID",ChildItemIndex="1",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+SelectItemFromTreeBasedOnIndex(ParentTreeControlType="ParentTreeElemntID",ChildItemIndex="1",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+SelectItemFromTreeBasedOnIndex(ParentTreeControlType="ParentTreeElemntID",ChildItemIndex="1",ClickMouseBtn="Left or right",Timeout="TimeOutInSecs",TerminateOnFailure="yes or no")
+
+#===========================================================================================================
+#CheckIfElementExistInTree
+#===========================================================================================================
+CheckIfElementExistInTree(ParentTreeName="ParentTreeElemntID",ElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ParentTreeName="ParentTreeElemntID",ReadElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ParentTreeName="ParentTreeElemntID",ReadRUFieldElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ReadParentTreeName="ParentTreeElemntID",ElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ReadParentTreeName="ParentTreeElemntID",ReadElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ReadParentTreeName="ParentTreeElemntID",ReadRUFieldElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ReadRUFieldParentTreeName="ParentTreeElemntID",ElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ReadRUFieldParentTreeName="ParentTreeElemntID",ReadElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ReadRUFieldParentTreeName="ParentTreeElemntID",ReadRUFieldElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ParentTreeAutomationId="ParentTreeElemntName",ElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ParentTreeAutomationId="ParentTreeElemntName",ReadElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ParentTreeAutomationId="ParentTreeElemntName",ReadRUFieldElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ParentTreeMappedName="ParentTreeElemntName",ElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ParentTreeMappedName="ParentTreeElemntName",ReadElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+CheckIfElementExistInTree(ParentTreeMappedName="ParentTreeElemntName",ReadRUFieldElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+
+#===========================================================================================================
+#ExpandTree
+#===========================================================================================================
+ExpandTree(ParentTreeName="ParentTreeElemntID",ElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ParentTreeName="ParentTreeElemntID",ReadElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ParentTreeName="ParentTreeElemntID",ReadRUFieldElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ReadParentTreeName="ParentTreeElemntID",ElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ReadParentTreeName="ParentTreeElemntID",ReadElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ReadParentTreeName="ParentTreeElemntID",ReadRUFieldElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ReadRUFieldParentTreeName="ParentTreeElemntID",ElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ReadRUFieldParentTreeName="ParentTreeElemntID",ReadElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ReadRUFieldParentTreeName="ParentTreeElemntID",ReadRUFieldElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ParentTreeAutomationId="ParentTreeElemntName",ElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ParentTreeAutomationId="ParentTreeElemntName",ReadElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ParentTreeAutomationId="ParentTreeElemntName",ReadRUFieldElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ParentTreeMappedName="ParentTreeElemntName",ElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ParentTreeMappedName="ParentTreeElemntName",ReadElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+ExpandTree(ParentTreeMappedName="ParentTreeElemntName",ReadRUFieldElementToExpandName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+
+#================================================================================================================================
+#TerminateIfTreeElementIsLeafNode
+#===============================================================================================================================
+TerminateIfTreeElementIsLeafNode(ParentTreeName="ParentTreeElemntID",ElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+TerminateIfTreeElementIsLeafNode(ParentTreeName="ParentTreeElemntID",ReadElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+TerminateIfTreeElementIsLeafNode(ParentTreeName="ParentTreeElemntID",ReadRUFieldElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+TerminateIfTreeElementIsLeafNode(ParentTreeName="ParentTreeElemntID",ElementToCheckAutomationId="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+TerminateIfTreeElementIsLeafNode(ParentTreeAutomationID="ParentTreeElemntID",ElementToCheckAutomationId="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+TerminateIfTreeElementIsLeafNode(ParentTreeAutomationID="ParentTreeElemntID",ElementToCheckName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+TerminateIfTreeElementIsLeafNode(ParentTreeClassName="ParentTreeElemntID",ElementToCheckClassName="xen-t8-sree2",Timeout="5",TerminateOnFailure="yes or no")
+
+#================================================================================================================================
+#WaitTillControlIsActive
+#===============================================================================================================================
+WaitTillControlIsActive(AutomationId="589",TimeOutInSec="180",TerminateOnFailure="yes or no")
+WaitTillControlIsActive(AutomationId="589",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="180",TerminateOnFailure="yes or no")
+WaitTillControlIsActive(MappedName="589",TimeOutInSec="180",TerminateOnFailure="yes or no")
+WaitTillControlIsActive(Name="589",TimeOutInSec="180",TerminateOnFailure="yes or no")
+WaitTillControlIsActive(MappedNameNotInTTKName="Finish",TimeOutInSec="180",TerminateOnFailure="yes")
+
+#================================================================================================================================
+#SelectItemFromList
+#===============================================================================================================================
+SelectItemFromList(ParentContainerMappedName="&Master",ReadNameItemToSelect="PoolMasterServerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerMappedName="&Master",ReadRUFieldNameItemToSelect="PoolMasterServerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerName="&Master",ReadNameItemToSelect="PoolMasterServerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerName="&Master",NameItemToSelect="PoolMasterServerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerAutomationId="&Master",ContainerSelectItemIndexIfDuplicatesExist="",ReadNameItemToSelect="PoolMasterServerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerAutomationId="&Master",ReadNameItemToSelect="PoolMasterServerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerAutomationId="&Master",ReadRUFieldNameItemToSelect="PoolMasterServerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerAutomationId="&Master",NameItemToSelect="PoolMasterServerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerAutomationId="&Master",MappedNameItemToSelect="PoolMasterServerDisplayName",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+SelectItemFromList(ParentContainerAutomationId="&Master",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerControlType="&Master",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerName="&Master",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerMappedName="&Master",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromList(ParentContainerControlType="&Master",ContainerSelectItemIndexIfDuplicatesExist="",ItemIndexToSelect="1",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+#================================================================================================================================
+#ExpandComboBox
+#===============================================================================================================================
+ExpandComboBox(AutomationId="CdDropDownBox",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ExpandComboBox(AutomationId="CdDropDownBox",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ExpandComboBox(Name="CdDropDownBox",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ExpandComboBox(MappedName="CdDropDownBox",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+#================================================================================================================================
+#ExpandComboBox
+#===============================================================================================================================
+SelectItemFromGridWithRowIndex(AutomationId="autoid",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithRowIndex(AutomationId="autoid",ContainerSelectItemIndexIfDuplicatesExist="",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithRowIndex(MappedName="autoid",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithRowIndex(Name="autoid",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnGridWithRowIndex(AutomationId="autoid",ItemRowIndexToSelect="0",ClickMouseBtn="Left or rigght",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnGridWithRowIndex(AutomationId="autoid",ContainerSelectItemIndexIfDuplicatesExist="",ItemRowIndexToSelect="0",ClickMouseBtn="Left or rigght",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnGridWithRowIndex(MappedName="autoid",ItemRowIndexToSelect="0",ClickMouseBtn="Left or rigght",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnGridWithRowIndex(Name="autoid",ItemRowIndexToSelect="0",ClickMouseBtn="Left or rigght",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+
+SelectItemFromDataGridWithRowIndexAndCheckCheckBox(Name="name",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromDataGridWithRowIndexAndCheckCheckBox(AutomationID="name",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromDataGridWithRowIndexAndCheckCheckBox(AutomationID="autoid",ContainerSelectItemIndexIfDuplicatesExist="",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromDataGridWithRowIndexAndCheckCheckBox(ControlType="autoid",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+SelectItemFromDataGridWithRowIndexAndClickOnFirstColumn(Name="name",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromDataGridWithRowIndexAndClickOnFirstColumn(AutomationID="name",ItemRowIndexToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+
+SelectItemFromDataGridWithRowIndexAndVerifyColumnValue(GridAutomationId="name",ItemRowIndexToSelect="0",ColumnNumToRetrieveValue="1",ExpectedColumnValue="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromDataGridWithRowIndexAndVerifyColumnValue(GridAutomationId="NetworksGridView",ItemRowIndexToSelect="1",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",TimeOutInSec="5",TerminateOnFailure="yes")
+SelectItemFromDataGridWithRowIndexAndVerifyColumnValue(GridAutomationId="NetworksGridView",ItemRowIndexToSelect="1",ColumnNumToRetrieveValue="1",MappedExpectedColumnValue="",TimeOutInSec="5",TerminateOnFailure="yes")
+
+VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="name",ColumnNumToRetrieveValue="1",ExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="name",ColumnNumToRetrieveValue="1",MappedExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="name",SelectItemIndexIfDuplicatesExist="",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="name",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndClickOnIt(GridName="name",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndClickOnIt(GridControlType="name",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndClickOnIt(GridControlType="name",SelectItemIndexIfDuplicatesExist="",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="NetworksGridView",ColumnNumToRetrieveValue="1",ExpectedColumnValue="cx",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes")
+
+VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="NetworksGridView",ColumnNumToRetrieveValue="1",MappedNameNotInTTKExpectedColumnValue="Network 0",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+VerifyColumnValueInDataGridAndCheckCorrespondingCheckBox(GridAutomationId="dataGridView1",ColumnNumToRetrieveValue="4",MappedExpectedColumnValue="Disconnected",ClickMouseBtn="Left",TimeOutInSec="2",TerminateOnFailure="yes")
+VerifyColumnValueInDataGridAndCheckCorrespondingCheckBox(GridAutomationId="name",ColumnNumToRetrieveValue="1",ExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndCheckCorrespondingCheckBox(GridAutomationId="name",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndCheckCorrespondingCheckBox(GridAutomationId="name",SelectItemIndexIfDuplicatesExist="",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndCheckCorrespondingCheckBox(GridAutomationId="name",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndCheckCorrespondingCheckBox(GridName="name",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndCheckCorrespondingCheckBox(GridControlType="name",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndCheckCorrespondingCheckBox(GridControlType="name",SelectItemIndexIfDuplicatesExist="",ColumnNumToRetrieveValue="1",ReadExpectedColumnValue="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndCheckCorrespondingCheckBox(GridAutomationId="NetworksGridView",ColumnNumToRetrieveValue="1",ExpectedColumnValue="cx",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes")
+VerifyColumnValueInDataGridAndClickOnIt(GridAutomationId="NetworksGridView",ColumnNumToRetrieveValue="1",ReadRUFieldExpectedColumnValue="NewNetworkName",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+
+
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="name",ColumnNumToRetrieveValue="1",SearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="name",SelectItemIndexIfDuplicatesExist="",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="name",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridName="name",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridControlType="name",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyColumnValueInDataGridAndClickOnIt(GridControlType="name",SelectItemIndexIfDuplicatesExist="",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="NetworksGridView",ColumnNumToRetrieveValue="1",SearchPattern="cx",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes")
+
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="name",ColumnNumToRetrieveValue="1",SearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="name",ColumnNumToRetrieveValue="1",MappedSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="name",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="name",SelectItemIndexIfDuplicatesExist="",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="name",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridName="name",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridControlType="name",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridControlType="name",SelectItemIndexIfDuplicatesExist="",ColumnNumToRetrieveValue="1",ReadSearchPattern="",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+VerifyDataGridColumnForAPatternExtractAndClickTheSame(GridAutomationId="NetworksGridView",ColumnNumToRetrieveValue="1",SearchPattern="cx",ClickMouseBtn="Left or right",TimeOutInSec="5",TerminateOnFailure="yes")
+
+
+#================================================================================================================================
+#SelectItemFromGridWithItemName
+#===============================================================================================================================
+SelectItemFromGridWithItemName(GridName="name",ItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridAutomationId="autoid",ContainerSelectItemIndexIfDuplicatesExist="",ItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridAutomationId="autoid",ItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridAutomationId="autoid",ReadItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridAutomationId="autoid",ReadRUFieldItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridControltype="datagrid",ItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridControltype="datagrid",ReadItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridControltype="datagrid",ReadRUFieldItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridClassName="datagrid",ItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridClassName="datagrid",ReadItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemName(GridClassName="datagrid",ReadRUFieldItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+#================================================================================================================================
+#SelectItemFromGridWithItemNameAndCheckCheckBox
+#===============================================================================================================================
+SelectItemFromGridWithItemNameAndCheckCheckBox(Name="name",ItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemNameAndCheckCheckBox(Name="name",ReadItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemNameAndCheckCheckBox(AutomationID="name",ItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemNameAndCheckCheckBox(AutomationID="name",ReadItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemNameAndCheckCheckBox(AutomationID="name",ReadRUFieldItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemNameAndCheckCheckBox(AutomationID="autoid",ContainerSelectItemIndexIfDuplicatesExist="",ItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemNameAndCheckCheckBox(Name="autoid",ReadItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectItemFromGridWithItemNameAndCheckCheckBox(Name="autoid",ReadRUFieldItemNameToSelect="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+
+#================================================================================================================================
+#CheckCheckBox
+#===============================================================================================================================
+CheckCheckBox(Name="autoid",TimeOutInSec="5",TerminateOnFailure="yes or no")
+CheckCheckBox(MappedName="autoid",TimeOutInSec="5",TerminateOnFailure="yes or no")
+CheckCheckBox(AutomationID="autoid",TimeOutInSec="5",TerminateOnFailure="yes or no")
+CheckCheckBox(AutomationID="autoid",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+CheckCheckBox(MappedNameNotInTTKName="autoid",TimeOutInSec="5",TerminateOnFailure="yes or no")
+CheckCheckBox(ControlType="autoid",TimeOutInSec="5",TerminateOnFailure="yes or no")
+CheckCheckBox(ControlType="autoid",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+#================================================================================================================================
+#UnCheckCheckBox
+#===============================================================================================================================
+UnCheckCheckBox(Name="autoid",TimeOutInSec="5",TerminateOnFailure="yes or no")
+UnCheckCheckBox(MappedName="autoid",TimeOutInSec="5",TerminateOnFailure="yes or no")
+UnCheckCheckBox(AutomationID="autoid",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+UnCheckCheckBox(AutomationID="autoid",TimeOutInSec="5",TerminateOnFailure="yes or no")
+UnCheckCheckBox(ControlType="autoid",TimeOutInSec="5",TerminateOnFailure="yes or no")
+UnCheckCheckBox(ControlType="autoid",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+
+#================================================================================================================================
+#UnCheckCheckBox
+#===============================================================================================================================
+SelectTabItemFromTabControl(ParentContainerAutomationId="autoid",TabItemToSelectName="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectTabItemFromTabControl(ParentContainerAutomationId="autoid",ReadTabItemToSelectName="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectTabItemFromTabControl(ParentContainerName="autoid",MappedTabItemToSelectName="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectTabItemFromTabControl(ParentContainerName="autoid",MappedTabItemToSelectName="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectTabItemFromTabControl(ParentContainerAutomationId="autoid",MappedTabItemToSelectName="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+SelectTabItemFromTabControl(ParentContainerAutomationId="autoid",TabItemToSelectAutomationID="0",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+SendKeys(KeysToSend="")
+SendKeysToType(KeysToSend="")
+SendKeysToType(ReadKeysToSend="")
+
+#================================================================================================================================
+#ClickOnElementAtBeginning
+#===============================================================================================================================
+
+ClickOnElementAtBeginning(AutomationIDElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(AutomationIDElementToClick="",SelectItemIndexIfDuplicatesExist="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ReadNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ReadRUFieldNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(MappedNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(NameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ClassNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ClassNameElementToClick="",ClickMouseBtn="Left or Right",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ControlTypeElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ControlTypeElementToClick="",SelectItemIndexIfDuplicatesExist="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtBeginning(ParentCntrAutomationID="dataGridView",MappedNameNotInTTKNameElementToClick="Row 1",ClickMouseBtn="Left",TimeOutInSec="1",TerminateOnFailure="yes")
+ClickOnElementAtBeginning(ParentCntrAutomationID="autoid",AutomationIDElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtBeginning(ParentCntrAutomationID="autoid",ReadNameElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ParentCntrAutomationID="autoid",ReadRUFieldNameElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ParentCntrAutomationID="autoid",MappedNameElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtBeginning(ParentCntrAutomationID="autoid",NameElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtBeginning(ParentCntrAutomationID="autoid",MappedNameElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ParentCntrAutomationID="autoid",ContainerSelectItemIndexIfDuplicatesExist="",MappedNameElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtBeginning(ParentCntrAutomationID="autoid",ControlTypeElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtBeginning(ParentCntrAutomationID="autoid",ContainerSelectItemIndexIfDuplicatesExist="",ControlTypeElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtBeginning(ParentCntrAutomationID="verticalTabs",ControlTypeElementToClick="ListItem",ChildSelectItemIndexIfDuplicatesExist="2",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+##================================================================================================================================
+#ClickOnElementAtMiddle
+##===============================================================================================================================
+
+ClickOnElementAtMiddle(AutomationIDElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(AutomationIDElementToClick="",ClickMouseBtn="Left or Right",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(ReadNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(ReadRUFieldNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(MappedNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(NameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtMiddle(ClassNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(ClassNameElementToClick="",ClickMouseBtn="Left or Right",SelectItemIndexIfDuplicatesExist="",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(ControlTypeElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(ControlTypeElementToClick="DataItem",SelectItemIndexIfDuplicatesExist="4",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+
+ClickOnElementAtMiddle(ParentCntrAutomationID="autoid",AutomationIDElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtMiddle(ParentCntrAutomationID="autoid",ReadElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(ParentCntrAutomationID="autoid",ReadElementNameToClick="",MappedElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(ParentCntrAutomationID="autoid",ReadRUFieldElementNameToClick="",MappedElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtMiddle(ParentCntrAutomationID="autoid",ElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtMiddle(ParentCntrAutomationID="autoid",MappedElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(ParentCntrAutomationID="autoid",ContainerSelectItemIndexIfDuplicatesExist="",MappedElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtMiddle(ParentCntrAutomationID="autoid",ControlTypeElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtMiddle(ParentCntrAutomationID="autoid",ContainerSelectItemIndexIfDuplicatesExist="",ControlTypeElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtMiddle(ParentCntrAutomationID="verticalTabs",ControlTypeElementToClick="ListItem",ChildSelectItemIndexIfDuplicatesExist="2",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+
+#================================================================================================================================
+#ClickOnElementAtEnd
+#===============================================================================================================================
+
+ClickOnElementAtEnd(AutomationIDElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(AutomationIDElementToClick="",SelectItemIndexIfDuplicatesExist="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ReadNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ReadRUFieldNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(MappedNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(NameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ClassNameElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ClassNameElementToClick="",SelectItemIndexIfDuplicatesExist="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ControlTypeElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ControlTypeElementToClick="MenuItem",SelectItemIndexIfDuplicatesExist="4",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+
+ClickOnElementAtEnd(ParentCntrAutomationID="customTreeViewServers",ReadNameElementToClick="PoolSlaveServerDisplayName",ClickMouseBtn="Left",TimeOutInSec="5",TerminateOnFailure="yes")
+
+ClickOnElementAtEnd(ParentCntrAutomationID="autoid",AutomationIDElementToClick="",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtEnd(ParentCntrAutomationID="autoid",ReadElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ParentCntrAutomationID="autoid",ReadRUFieldElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ParentCntrAutomationID="autoid",ReadElementNameToClick="",MappedElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtEnd(ParentCntrAutomationID="autoid",ElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtEnd(ParentCntrAutomationID="autoid",MappedElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ParentCntrAutomationID="autoid",ContainerSelectItemIndexIfDuplicatesExist="",MappedElementNameToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtEnd(ParentCntrAutomationID="autoid",ControlTypeElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+ClickOnElementAtEnd(ParentCntrAutomationID="autoid",ContainerSelectItemIndexIfDuplicatesExist="",ControlTypeElementToClick="autoid",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+ClickOnElementAtEnd(ParentCntrAutomationID="verticalTabs",ControlTypeElementToClick="ListItem",ChildSelectItemIndexIfDuplicatesExist="2",ClickMouseBtn="Left or Right",TimeOutInSec="5",TerminateOnFailure="yes or no")
+
+CheckIfElementIsActive(Name="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(ReadName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(ReadRUFieldName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(AutomationId="AutoId",ContainerSelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(AutomationId="AutoId",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(AutomationId="AutoId",SelectIndex="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+CheckIfElementIsActive(ParentCntrName="EN Name",ElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(ReadParentCntrName="EN Name",ReadElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(ReadRUFieldParentCntrName="EN Name",ReadElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(ParentCntrClassName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(ParentCntrAutomationId="AutoId",ElementClassName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsActive(ParentCntrAutomationId="AutoId",ContainerSelectItemIndexIfDuplicatesExist="",ElementClassName="",ChildSelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+
+CheckIfElementIsNotActive(Name="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(ReadName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(ReadRUFieldName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(AutomationId="AutoId",ContainerSelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(AutomationId="AutoId",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(AutomationId="AutoId",SelectIndex="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(MappedName="&Delete",TimeOutInSec="2",TerminateOnFailure="yes")
+
+CheckIfElementIsNotActive(ParentCntrName="EN Name",ElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(ReadParentCntrName="EN Name",ReadElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(ReadRUFieldParentCntrName="EN Name",ReadElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(ParentCntrClassName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(ParentCntrAutomationId="AutoId",ElementClassName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementIsNotActive(ParentCntrAutomationId="AutoId",ContainerSelectItemIndexIfDuplicatesExist="",ElementClassName="",ChildSelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+#================================================================================================================================
+#CheckIfElementDoesNotExists
+#===============================================================================================================================
+
+CheckIfElementDoesNotExists(Name="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(MappedName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(ReadName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(ReadRUFieldName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(AutomationId="AutoId",ContainerSelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(AutomationId="AutoId",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(AutomationId="AutoId",SelectIndex="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(ClassName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+CheckIfElementDoesNotExists(ParentCntrName="EN Name",ElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(ReadParentCntrName="EN Name",ReadElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(ReadRUFieldParentCntrName="EN Name",ReadElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(ParentCntrClassName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(ParentCntrAutomationId="AutoId",ElementClassName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementDoesNotExists(ParentCntrAutomationId="AutoId",ContainerSelectItemIndexIfDuplicatesExist="",ElementClassName="",ChildSelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+CheckIfElementExists(ParentCntrName="EN Name",ElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(ReadParentCntrName="EN Name",ReadElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(ReadRUFieldParentCntrName="EN Name",ReadElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(ParentCntrClassName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(ParentCntrControlType="EN Name",MappedElementName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(ParentCntrAutomationId="AutoId",ElementClassName="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(ParentCntrAutomationId="AutoId",ContainerSelectItemIndexIfDuplicatesExist="",ElementClassName="",ChildSelectItemIndexIfDuplicatesExist="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+CheckIfElementExists(Name="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(MappedName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(ReadName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(ReadRUFieldName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(ClassName="EN Name",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(AutomationId="AutoId",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+CheckIfElementExists(AutomationId="AutoId",SelectIndex="",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+
+ClickOnIconFromSystemTrayNotificationArea(IconName="",ClickMouseBtn="Left or right",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+ClickOnIconFromSystemTrayNotificationArea(IconAutomationID="",ClickMouseBtn="Left or right",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+ClickOnIconFromSystemTrayNotificationArea(IconControlType="",ClickMouseBtn="Left or right",TimeOutInSec="Secs",TerminateOnFailure="yes or no")
+
+#================================================================================================================================
+#WaitForGuizardToFinishCapture
+#===============================================================================================================================
+WaitForGuizardToFinishCapture(WindowName="NameofWindow")
+
+LookForElementWithPattern(ElementToSearchControlType="",SearchPattern="",TerminateOnFailure="yes or no")
+LookForElementWithPattern(ElementToSearchControlType="",MappedSearchPattern="",TerminateOnFailure="yes or no")
+LookForElementWithPattern(ReadElementToSearchControlType="",ReadSearchPattern="",TerminateOnFailure="yes or no")
+
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="",SearchPattern="",ClickMouseBtn="Left or right",TerminateOnFailure="yes or no")
+LookForElementWithPatternAndClickOnIt(ReadElementToSearchControlType="",ReadSearchPattern="",ClickMouseBtn="Left or right",TerminateOnFailure="yes)
+LookForElementWithPatternAndClickOnIt(ElementToSearchControlType="TreeItem",ReadRUFieldSearchPattern="",ClickMouseBtn="Left or right",TerminateOnFailure="no")
+
+#================================================================================================================================
+#CheckContainerRawViewIfElementPresent
+#Some elements will be missing from the control view and will be present in raw view
+#For container controls like DataGrid, this function will check in the raw view if an item is present or not
+#===============================================================================================================================
+
+CheckContainerRawViewIfElementPresent(ContainerAutomationID="",ContainerDirectChildControlType="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerAutomationID="",ContainerDirectChildAutomationID="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerAutomationID="",ContainerDirectChildClassName="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerAutomationID="",ContainerDirectChildName="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerAutomationID="",MappedContainerDirectChildName="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerControlType="",ContainerDirectChildControlType="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerClassName="",ContainerDirectChildAutomationID="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerName="",ContainerDirectChildClassName="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(MappedContainerName="",ContainerDirectChildName="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerAutomationID="",ParentSelectItemIndexIfDuplicatesExist="1",MappedContainerDirectChildName="",SearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerControlType="",ContainerDirectChildControlType="",MappedSearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresent(ContainerControlType="",ContainerDirectChildControlType="",ReadSearchElementExpectedName="",TimeOutInSec="",TerminateOnFailure="yes or no")
+
+
+
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerAutomationID="",ContainerDirectChildControlType="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerAutomationID="",ContainerDirectChildAutomationID="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerAutomationID="",ContainerDirectChildClassName="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerAutomationID="",ContainerDirectChildName="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerAutomationID="",MappedContainerDirectChildName="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerControlType="",ContainerDirectChildControlType="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerClassName="",ContainerDirectChildAutomationID="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerName="",ContainerDirectChildClassName="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(MappedContainerName="",ContainerDirectChildName="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerAutomationID="",ParentSelectItemIndexIfDuplicatesExist="1",MappedContainerDirectChildName="",SearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerControlType="",ContainerDirectChildControlType="",MappedSearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+CheckContainerRawViewIfElementPresentAndClickOnIt(ContainerControlType="",ContainerDirectChildControlType="",ReadSearchElementExpectedName="",ClickMouseBtn="",TimeOutInSec="",TerminateOnFailure="yes or no")
+
+
+###################################################################################################################################################################
+#Windows Specific 
+###################################################################################################################################################################
+WS::WaitTillSystemIsUp(ReadSystemIp="",WaitTimeOutInMins="")
+WS::WaitTillSystemIsUp(SystemIp="",WaitTimeOutInMins="")
+WS::AuthenticateToRemoteMachinePath(SystemPathWithIP="\\10.105.74.63\iso",SystemUserName="",SystemPassword="")
+WS::AuthenticateToRemoteMachinePath(ReadSystemPathWithIP="\\10.105.74.63\iso",ReadSystemUserName="",ReadSystemPassword="")
+
+
+
+###################################################################################################################################################################
+#Product Specific - XenSerevr Specific
+###################################################################################################################################################################
+XS::WaitTillVMIPIsObtained(ServerIP="",ServerUserName="",ServerPassword="",VMNameLabel="")
+XS::WaitTillVMIPIsObtained(ReadServerIP="XenServerIP1",ReadServerUserName="XenServerUserName1",ReadServerPassword="XenServerPassword1",ReadVMNameLabel="NewVMNameToInstallFromTemplate")
+XS::WaitTillVMIPIsObtained(ReadServerIP="XenServerIP1",ReadServerUserName="XenServerUserName1",ReadServerPassword="XenServerPassword1",ReadRUFieldVMNameLabel="NewVMName")
+
+XS::ImportTemplateFromCIFSShare(ServerIP="",ServerUserName="",ServerPassword="",CIFSSharePath="",CIFSUserName="",CIFSPassword="",TemplateNameToImport="")
+XS::ImportTemplateFromCIFSShare(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",ReadCIFSSharePath="",ReadCIFSUserName="",ReadCIFSPassword="",ReadTemplateNameToImport="")
+
+XS::ImportTemplateFromCIFSShareAndCreateVM(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",ReadCIFSSharePath="",ReadCIFSUserName="",ReadCIFSPassword="",ReadTemplateNameToImport="",ReadNewVMName="")
+
+#VMParamtype - mention what is used to identify the VM. "UUID" or "Name-label".VMIdentifier - Give the value of uuid or namelabel of VM
+XS::StartVM(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",VMParamtype="UUId or namelabel",ReadVMIdentifier="VMNamelabel or UUID")
+XS::StartVM(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",VMParamtype="UUId or namelabel",ReadRUFieldVMIdentifier="VMNamelabel or UUID")
+
+XS::ShutdownVM(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",VMParamtype="UUId or namelabel",ReadVMIdentifier="VMNamelabel or UUID")
+XS::ShutdownVM(ReadServerIP="XenServerIP1",ReadServerUserName="XenServerUserName1",ReadServerPassword="XenServerPassword1",VMParamtype="namelabel",ReadRUFieldVMIdentifier="NewVMName")
+
+XS::StartVMFromTemplate(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",ReadNewVMName="UUId or namelabel",ReadTemplateIdentifier="VMNamelabel or UUID")
+
+XS::StartHostBackup(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",ReadBackupLocationWithFileName="Location")
+
+XS::StoreServerKeyInPuttyCache(ReadServerIP="",ReadServerUserName="",ReadServerPassword="")
+
+XS::MoveVDI(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",ReadVMNameLabel="VMNamelabel",ReadSRNameLabel="ISCSINAME")
+XS::MoveVM(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",ReadVMNameLabel="VMNamelabel",ReadSRNameLabel="ISCSINAME",NewVMNameLabel="DisasterRecTest")
+XS::MoveVM(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",ReadVMNameLabel="VMNamelabel",ReadSRNameLabel="ISCSINAME",ReadNewVMNameLabel="DisasterRecTest")
+
+XS::ShutDownAllVMs(ReadServerIP="",ReadServerUserName="",ReadServerPassword="")
+XS::DeleteAllVMs(ReadServerIP="",ReadServerUserName="",ReadServerPassword="")
+
+XS::WaitTillVMIsAvailable(ReadServerIP="",ReadServerUserName="",ReadServerPassword="",ReadVMNameLabel="VMNamelabel",WaitTimeOutInMins="")

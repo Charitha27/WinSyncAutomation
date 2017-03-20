@@ -1,0 +1,5 @@
+CN-ZH.txt-FullyLocalized
+JA-JA.txt-FullyLocalized
+ES-ES.txt-FullyLocalized
+DE-DE.txt-FullyLocalized
+FR-FR.txt-FullyLocalized

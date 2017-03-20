@@ -1,0 +1,48 @@
+﻿GuiZard
+==========
+GuiZardLocation=C:\Users\Administrator\Desktop\GUIzard\GUIzard_3.5.05\GUIzard_3.exe
+
+Installer
+=========
+InstallerLocation=C:\Xenserver\XenCenter.l10n.msi
+InstallerProcessName=msiexec.exe
+LocationToInstallXenCenter=C:\短测
+XenCenterVersion=XenCenter 6.1 (build 771)
+
+NewPool
+=======
+PoolName=𠀋𨛗𦨞𠗖𠵅𠮟 𥹥𥹖𠘨𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𠀂𠀃
+PoolDescription=𠀋𨛗𦨞𠗖𠵅𠮟 𥹥𥹖𠘨𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𠀂𠀃
+PoolMasterServerDisplayName=xen-t26-sree3
+PoolMasterServerIP=10.105.83.34
+
+AddNewServer
+==============
+XenServerIP1=10.105.83.34
+XenServerUserName1=root
+XenServerPassword1=citrix
+XenServerDisplayName1=xen-t8-sree2
+XenServerIP2=10.105.74.7
+XenServerUserName2=root
+XenServerPassword2=citrix
+XenServerDisplayName2=xen-t26-sree3
+
+StorageRepository
+=================
+CIFSSRName=𠀦𠁽𠀐𠀑𠁫𥹥𥹖𠘨𠀀
+CIFSSRDescription=𠀋𨛗𦨞𠗖𠵅𠮟 𥹥𥹖𠘨𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𠀂𠀃
+CIFSServer=\\10.105.74.58\Public_ISO
+CIFSUserName=citrix
+CIFSPassword=citrix
+
+XenServerTabs
+=============
+
+NewVM
+=========
+TemplateName=Windows 7 (32-bit)
+ISOName= JA-Win7 auto.iso
+NewTemplateName=短测试输入字符㕝㐀䌫㒣㐁㐎㐏䶵䶴一丁丂丏䨩㸿㒣䶵㰦䬻㠯㘭长文集合舂赛博学北憧园畅微软辛盛爱家
+TemplateDescription=𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𥹥𥹖𠘨𠀀𠀁𠀂𠀃𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𥹥𥹖𠘨𠀀𠀁𠀂𠀃𠀋𨛗𦨞𠗖𠵅𠮟𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𪛕𪛖
+VDiskName=面１２３123!@#$%ａｆｃｇｒｅafcgre𠵅𠮟𠁉)(*_-+='";:/><,\][{}|
+VDiskDescription=𠀋𨛗𦨞𠗖𠵅𠮟 𥹥𥹖𠘨𠁉𠀦𠁽𠀐𠀑𠁫𠀀𠀁𠀂𠀃
